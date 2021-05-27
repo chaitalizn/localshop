@@ -8,7 +8,6 @@ const PORT = process.env.PORT || 3001;
 
 
 
-
 //Sync sequelize tables with local database
 sequelize.sync({force: true}).then(() => {
     console.log("Connected to sequelize.");
