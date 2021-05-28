@@ -3,11 +3,11 @@ const { Model, DataTypes } = require('sequelize');
 //connect to sequelize
 const sequelize = require('../config/connection');
 
-class Industry extends Model { }
-//authentication will likely go here 
+//create company model
+class Industry extends Model { } 
 
+//create fields/columns for Company model
 Industry.init(
-//adding the constraints as in mysql2
     {
         id: {
             type: DataTypes.INTEGER,
@@ -20,14 +20,12 @@ Industry.init(
             allowNull: false
         }
     },
-//initiate sequelize
     {
         sequelize,
-        timestamps: false,
         freezeTableName: true,
         underscored: true,
         modelName: 'industry'
-    }
+      }
 );
 
 module.exports = Industry;

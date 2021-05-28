@@ -1,13 +1,11 @@
-//should router be used, enabling it for use
 const router = require('express').Router();
-
-const { request } = require('express');
-const { Industry, Company } = require('./models/Industries.js');
+const { Industry } = require('../models');
+const withAuth = require('../../utils/auth');
 
 //Authorization enabling will be added here
 // const withAuth = require('../../utils/(authorization app here)');
 
-//"api/industries/"
+///industries/
 
 //Read
 //Find all industries
