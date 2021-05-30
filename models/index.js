@@ -3,7 +3,6 @@ const Company = require('./Company');
 const Hours = require('./Hours');
 const Industry = require('./Industry');
 const Products = require('./Products');
-const { belongsTo } = require('./User');
 const User = require('./User');
 
 //A User can have multiple companies that they own and manage
