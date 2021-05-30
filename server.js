@@ -7,6 +7,10 @@ const routes = require('./controllers');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+//Express middleware to accept incoming json objects
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
+
 //Use the routes we have defined in the controller folder
 app.use(routes);
 
