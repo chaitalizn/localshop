@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const {Compnay, Hours, Industry, Products, User} = require('../../models');
+const {Company, Hours, Industry, Products, User} = require('../../models');
 const sequelize = require('../../config/connection');
 const { Model } = require('sequelize/types');
 
