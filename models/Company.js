@@ -46,6 +46,13 @@ Company.init(
         type: DataTypes.TEXT,
         allowNull: false,
     },
+    hours_id: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: 'hours',
+            key: 'id'
+          }
+    },
     industry_id: {
         type: DataTypes.INTEGER,
         references: {
