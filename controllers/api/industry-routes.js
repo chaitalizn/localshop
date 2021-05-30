@@ -1,6 +1,5 @@
 const router = require('express').Router();
-const { Industry } = require('../models');
-const withAuth = require('../../utils/auth');
+const { Industry } = require('../../models');
 
 //Authorization enabling will be added here
 // const withAuth = require('../../utils/(authorization app here)');
@@ -123,3 +122,5 @@ Industry.destroy(
     res.status(500).json(err);
 });
 });
+
+module.exports = router;

@@ -38,14 +38,14 @@ Company.belongsTo(User, {foreignKey: 'user_id'});
 //I believe it should look more like this:
 
 //A company has only a single set of weekly hours
-Company.hasOne(Hours, {foreignKey: 'hours_id'});
+Company.hasOne(Hours, {foreignKey: 'company_id'});
 //A set of hours can only belong to a single company 
-Hours.belongsTo(Company, {foreignKey: 'hours_id'});
+Hours.belongsTo(Company, {foreignKey: 'company_id'});
 
 //A company can have many product offerings
-Company.hasMany(Products, {foreignKey: 'product_id'});
+Company.hasMany(Products, {foreignKey: 'company_id'});
 //A product has to belong to a single company
-Products.belongsTo(Company, {foreignKey: 'product_id'});
+Products.belongsTo(Company, {foreignKey: 'company_id'});
 
 //An industry has many companies in it
 Industry.hasMany(Company, {foreignKey: 'industry_id'});

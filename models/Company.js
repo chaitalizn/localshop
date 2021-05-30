@@ -46,13 +46,14 @@ Company.init(
         type: DataTypes.TEXT,
         allowNull: false,
     },
-    hours_id: {
-        type: DataTypes.INTEGER,
-        references: {
-            model: 'hours',
-            key: 'id'
-          }
-    },
+    //hours should list the company id
+    // hours_id: {
+    //     type: DataTypes.INTEGER,
+    //     references: {
+    //         model: 'hours',
+    //         key: 'id'
+    //       }
+    //},
     industry_id: {
         type: DataTypes.INTEGER,
         references: {
@@ -66,14 +67,15 @@ Company.init(
             model: 'user',
             key: 'id'
           }
-    },
-    products_id: {
-        type: DataTypes.INTEGER,
-        references: {
-            model: 'products',
-            key: 'id'
-          }
     }
+    //product should list the company id
+    // products_id: {
+    //     type: DataTypes.INTEGER,
+    //     references: {
+    //         model: 'product',
+    //         key: 'id'
+    //       }
+    // }
     //create a hours model and add references
     },
     {
@@ -81,7 +83,7 @@ Company.init(
         freezeTableName: true,
         underscored: true,
         modelName: 'company'
-      }
+    }
 );
 
 module.exports = Company;
