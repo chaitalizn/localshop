@@ -2,7 +2,7 @@
 const Company = require('./Company');
 const Hours = require('./Hours');
 const Industry = require('./Industry');
-const Products = require('./Products');
+const Product = require('./Product');
 const User = require('./User');
 
 //A User can have multiple companies that they own and manage
@@ -43,9 +43,9 @@ Company.hasOne(Hours, {foreignKey: 'company_id'});
 Hours.belongsTo(Company, {foreignKey: 'company_id'});
 
 //A company can have many product offerings
-Company.hasMany(Products, {foreignKey: 'company_id'});
+Company.hasMany(Product, {foreignKey: 'company_id'});
 //A product has to belong to a single company
-Products.belongsTo(Company, {foreignKey: 'company_id'});
+Product.belongsTo(Company, {foreignKey: 'company_id'});
 
 //An industry has many companies in it
 Industry.hasMany(Company, {foreignKey: 'industry_id'});
@@ -53,4 +53,4 @@ Industry.hasMany(Company, {foreignKey: 'industry_id'});
 Company.belongsTo(Industry, {foreignKey: 'industry_id'});
 
 
-module.exports = { User, Company, Industry, Hours, Products };
+module.exports = { User, Company, Industry, Hours, Product };
