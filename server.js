@@ -5,6 +5,7 @@ const routes = require('./controllers');
 const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const exphbs = require('express-handlebars')
+const path = require('path');
 
 //Initialize express app and define port for server to use
 const app = express();
@@ -13,7 +14,7 @@ const PORT = process.env.PORT || 3001;
 //define the session configuration and cookie settings for the session
 const sess = {
     secret: 'An amazing secret for nobody to see or use',
-    cookie: { maxAge: 60000 * 10 },
+    cookie: { maxAge: 60000 * 2 },
     rolling: true,
     resave: false,
     saveUninitialized: true,
@@ -31,6 +32,8 @@ app.set('view engine', 'handlebars');
 //Express middleware to accept incoming json objects
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
+app.use(express.static(path.join(__dirname, 'public')));
+
 
 //Use the routes we have defined in the controller folder
 app.use(routes);

@@ -61,8 +61,9 @@ router.post('/', (req, res) => {
         req.session.user_id = createdUser.id,
         req.session.loggedIn = true;
 
+        //after session has been saved, send a redirect to home response back
         console.log(req.session);
-        res.json({user: createdUser, message: "user validated!"});
+        res.redirect('/');
     })
     .catch(err => res.status(500).json(err));
 });
@@ -93,8 +94,9 @@ router.post('/login', (req, res) => {
         req.session.user_id = dbUserData.id,
         req.session.loggedIn = true;
 
+        //after session has been saved, send a redirect to home response back
         console.log(req.session);
-        res.json({user: dbUserData, message: "user validated!"})
+        res.redirect('/');
     })
     .catch(err => res.status(500).json(err));
 });
