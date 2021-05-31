@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const {Company, Hours, Industry, Product, User} = require('../../models');
 const sequelize = require('../../config/connection');
-const { Model } = require('sequelize/types');
+
 
 // GET/api/company - get all company info including the hours
 router.get('/', (req, res) => {

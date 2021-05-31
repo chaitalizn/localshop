@@ -1,15 +1,9 @@
 // import all models
 const User = require('./User');
 const Industry = require('./Industry');
-const Product = require('./Products');
+const Product = require('./Product');
 const Company = require('./Company');
 const Hours = require('./Hours');
-<<<<<<< HEAD
-=======
-const Industry = require('./Industry');
-const Product = require('./Product');
-const User = require('./User');
->>>>>>> 515db7ee3b3233a2921c5e23df5f10806ce293c7
 
 //A User can have multiple companies that they own and manage
 User.hasMany(Company, {foreignKey: 'user_id'});
@@ -57,25 +51,4 @@ Company.hasMany(Product, {foreignKey: 'company_id'});
 // });
 
 
-<<<<<<< HEAD
-=======
-//I believe it should look more like this:
-
-//A company has only a single set of weekly hours
-Company.hasOne(Hours, {foreignKey: 'company_id'});
-//A set of hours can only belong to a single company 
-Hours.belongsTo(Company, {foreignKey: 'company_id'});
-
-//A company can have many product offerings
-Company.hasMany(Product, {foreignKey: 'company_id'});
-//A product has to belong to a single company
-Product.belongsTo(Company, {foreignKey: 'company_id'});
-
-//An industry has many companies in it
-Industry.hasMany(Company, {foreignKey: 'industry_id'});
-//A company only has a single industry it can be a part of
-Company.belongsTo(Industry, {foreignKey: 'industry_id'});
-
-
->>>>>>> 515db7ee3b3233a2921c5e23df5f10806ce293c7
 module.exports = { User, Company, Industry, Hours, Product };
