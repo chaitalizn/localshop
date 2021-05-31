@@ -4,6 +4,7 @@ const sequelize = require('./config/connection');
 const routes = require('./controllers');
 const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const exphbs = require('express-handlebars')
 
 //Initialize express app and define port for server to use
 const app = express();
@@ -21,6 +22,11 @@ const sess = {
 
 //Server is instructed to use session data
 app.use(session(sess));
+
+//Create a handlebars instance and then register the handlebars view engine
+const hbs = exphbs.create({});
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
 
 //Express middleware to accept incoming json objects
 app.use(express.json());
