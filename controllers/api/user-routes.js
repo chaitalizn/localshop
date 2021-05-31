@@ -52,8 +52,62 @@ router.post('/', (req, res) => {
         email,
         password
     })
-    .then(createdUser => res.json(createdUser))
+    .then(createdUser => {
+        //If the user is validated then we can update the session data
+        req.session.email = createdUser.email,
+        req.session.user_id = createdUser.id,
+        req.session.loggedIn = true;
+
+        console.log(req.session);
+        res.json({user: createdUser, message: "user validated!"});
+    })
     .catch(err => res.status(500).json(err));
+});
+
+//Log the user in
+router.post('/login', (req, res) => {
+    //expects: {email: testUser, password: testPassword}
+    const {email, password} = req.body;
+
+    User.findOne({
+        where: {
+            email
+        }
+    })
+    .then(dbUserData => {
+        //if user is not found return an error
+        if(!dbUserData){
+            return res.status(404).json({message: "User not found."});
+        }
+
+        //If password not validated then send an error back
+        if(!dbUserData.validateUser(password)){
+            return res.status(404).json({message: "Password is incorrect."});
+        }
+
+        //If the user is validated then we can update the session data
+        req.session.email = dbUserData.email;
+        req.session.user_id = dbUserData.id,
+        req.session.loggedIn = true;
+
+        console.log(req.session);
+        res.json({user: dbUserData, message: "user validated!"})
+    })
+    .catch(err => res.status(500).json(err));
+});
+
+//Log the user out
+router.post('/logout', (req, res) => {
+    //if we user is logged in then destroy the session and logout
+    if(req.session.loggedIn){
+        req.session.destroy(()=>{
+            res.status(204).end();
+        });
+    }
+    //return success if user isnt logged in because they are logged out
+    else{
+        res.status(204).end();
+    }
 });
 
 //Update Routes
