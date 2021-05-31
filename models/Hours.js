@@ -1,5 +1,6 @@
 //require sequelize
 const { Model, DataTypes } = require('sequelize');
+const { Company } = require('../models/Company');
 //connect to sequelize
 const sequelize = require('../config/connection');
 
@@ -48,8 +49,8 @@ Hours.init(
             references: {
                 model: 'company',
                 key: 'id'
-            }
-        },
+              }
+        }
     },
     {
         sequelize,

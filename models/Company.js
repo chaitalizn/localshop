@@ -24,7 +24,7 @@ Company.init(
         allowNull: false,
     },
     phone: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.BIGINT,
         allowNull: false,
     },
     company_email: {
@@ -46,14 +46,6 @@ Company.init(
         type: DataTypes.TEXT,
         allowNull: false,
     },
-    //hours should list the company id
-    // hours_id: {
-    //     type: DataTypes.INTEGER,
-    //     references: {
-    //         model: 'hours',
-    //         key: 'id'
-    //       }
-    //},
     industry_id: {
         type: DataTypes.INTEGER,
         references: {
@@ -68,15 +60,6 @@ Company.init(
             key: 'id'
           }
     }
-    //product should list the company id
-    // products_id: {
-    //     type: DataTypes.INTEGER,
-    //     references: {
-    //         model: 'product',
-    //         key: 'id'
-    //       }
-    // }
-    //create a hours model and add references
     },
     {
         sequelize,

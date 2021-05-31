@@ -1,11 +1,11 @@
 const router = require('express').Router();
-const {Compnay, Hours, Industry, Products, User} = require('../../models');
-const sequelize = require('../../config/connection');
-const { Model } = require('sequelize/types');
+const {Company, Hours, Industry, Product, User} = require('../../models');
+//const sequelize = require('../../config/connection');
+//const { Model } = require('sequelize/types');
 
 // GET/api/company - get all company info including the hours
 router.get('/', (req, res) => {
-    post.findAll({
+    Company.findAll({
         attributes: [
             'id',
             'company_name',
@@ -28,10 +28,14 @@ router.get('/', (req, res) => {
             },
             //add product data
             {
-            model: Products,
+            model: Product,
             attributes: ['id', 'product_name', 'description_text']  
-            }
+            },
             //add user data
+            {
+            model: User,
+            attributes: ['id', 'username', 'email']
+            }  
         ]
     })
     .then(dbCompanyData => res.json(dbCompanyData))
@@ -69,8 +73,9 @@ router.post('/', (req, res) => {
         phone: req.body.phone,
         company_email: req.body.company_email,
         website: req.body.website,
-        about: req.body.about
-        //how to update hours, industry, user and products associated with company 
+        about: req.body.about,
+        industry_id: req.body.industry_id,
+        user_id: req.body.user_id
     })
       .then(dbCompanyData => res.json(dbCompanyData))
       .catch(err => {
