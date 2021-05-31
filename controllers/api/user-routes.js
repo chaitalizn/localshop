@@ -1,6 +1,6 @@
 //Import express router and models
 const router = require('express').Router();
-const {User} = require('../../models');
+const {User, Company} = require('../../models');
 
 //User Routes: /api/users
 
@@ -9,7 +9,9 @@ const {User} = require('../../models');
 
 //Get All Users
 router.get('/', (req, res) => {
-    User.findAll({})
+    User.findAll({
+        include: Company
+    })
     .then(dbUserData => res.json(dbUserData))
     .catch(err => res.status(500).json(err));
 });
@@ -19,7 +21,8 @@ router.get('/:id', (req, res) => {
     User.findOne({
         where: {
             id: req.params.id
-        }
+        },
+        include: Company
     })
     .then(dbUserData => {
         //if no user is found, return a message, otherwise, return the single user data
