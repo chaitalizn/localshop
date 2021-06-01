@@ -1,5 +1,5 @@
-<form class="login-form p-3 col-6 mx-auto mt-4">
-  <h1 class="display-5 text-center">LocalShop Login</h1>
+<form class="login-form p-3 col-4 mx-auto mt-4 border-2 border-bottom">
+  <h1 class="display-5 text-center">Login</h1>
   <div class="mb-3 mt-4">
     <label for="email-login" class="form-label">Email Address:</label>
     <input type="text" class="form-control" id="email-login" />
@@ -11,9 +11,12 @@
   </div>
   <div class="d-grid gap-2 col-6 mx-auto">
     <button type="submit" class="btn btn-primary">Login</button>
-    <button type="click" class="btn btn-success col-6 mx-auto" data-bs-toggle="modal" data-bs-target="#signup-modal">New User</button>
+    
   </div>
 </form>
+<div class="d-flex justify-content-center p-3">
+  <button type="click" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#signup-modal">New User</button>
+</div>
 
 <div class="modal" tabindex="-1" id="signup-modal">
   <div class="modal-dialog modal-dialog-centered">
