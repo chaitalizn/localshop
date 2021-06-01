@@ -34,6 +34,13 @@ a{
   color: white
 }
 
+.hero{
+  background-image: url("../images/hero-image.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 740px;
+} 
+
 .sidebar {
   height: 100%;
   width: 0;
