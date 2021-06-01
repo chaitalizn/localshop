@@ -11,18 +11,21 @@
 <body>
     <div class="wrapper">
         <header>
-            <nav class="navbar navbar-dark bg-dark navbar-expand-sm bg-light text-left">
+            <nav class="navbar navbar-dark bg-dark navbar-expand-sm bg-light text-left d-flex justify-content-between px-4">
                 <div id="main">
                     <button class="openbtn" onclick="openNav()">☰</button>
                 </div>
-                <a href ="/">
+                <div>
+                    <h1 class="display-4 text-light">LocalShop</h1>
+                </div>
+                <div>
                     {{#if loggedIn}}
                     <a class="text-right" href="/dashboard">Welcome to your dashboard.</a>
                     <button id="logout" class="btn-no-style text-right">logout</button>
                     {{else}}
                     <a href="/login">Login</a>
                     {{/if}}
-                </a>
+                </div>
             </nav>
 
             <div id="mySidebar" class="sidebar">
@@ -39,10 +42,8 @@
             {{{ body }}}
         </main>
 
-        <footer>
-            <nav class="navbar navbar-dark bg-dark">
-                <a href="/">LocalShop ©2021</a>
-            </nav>
+        <footer class="navbar-dark bg-dark">
+            <a href="/">LocalShop ©2021</a>
         </footer>
     </div>
     

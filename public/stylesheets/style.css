@@ -22,6 +22,18 @@ main{
   padding: 2% 4%;
 }
 
+footer{
+  display: flex;
+  justify-content: center;
+  background-color: #111;
+  padding: 1% 0;
+}
+
+a{
+  text-decoration: none;
+  color: white
+}
+
 .sidebar {
   height: 100%;
   width: 0;
@@ -71,7 +83,6 @@ main{
 
 #main {
   transition: margin-left .5s;
-  padding: 16px;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
