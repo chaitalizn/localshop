@@ -34,23 +34,19 @@
                 <a href="#">Contact</a>
             </div>
         </header>
+
         <main>
-
             {{{ body }}}
-
         </main>
+
         <footer>
-
+            <nav class="navbar navbar-dark bg-dark">
+                <a href="/">LocalShop ©2021</a>
+            </nav>
+        </footer>
     </div>
-    </footer>
-    <nav class="navbar navbar-dark bg-dark">
-        <a href="/">LocalShop ©2021</a>
-    </nav>
-    </div>
-    </div>
-    </footer>
-    </div>
-
+    
+        
     {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>
     {{/if}}
@@ -66,5 +62,7 @@
             document.getElementById("main").style.marginLeft = "0";
         }
     </script>
+
 </body>
+
 </html>
