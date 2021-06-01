@@ -1,6 +1,7 @@
-//Hi team, I referred to the lesson content a lot for this section and just wanted to be transparent about it here.  (just tech news)
+//login
 async function loginFormHandler(event) {
   event.preventDefault();
+  console.log("clicked");
 
   //Setting rec'd values to a variable
   const email = document.querySelector('#email-login').value.trim();
@@ -26,9 +27,11 @@ async function loginFormHandler(event) {
     }
   }
 }
-//sign up
+
+//signup
 async function signupFormHandler(event) {
   event.preventDefault();
+  console.log("clicked");
 
   //set rec'd input to variables and getting rid of white space
   const username = document.querySelector('#username-signup').value.trim();
@@ -56,5 +59,5 @@ async function signupFormHandler(event) {
   }
 }
 
-document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);
 document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
+document.querySelector('#signup-button').addEventListener('click', signupFormHandler);

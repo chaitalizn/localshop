@@ -50,7 +50,29 @@ router.get('/:id', (req, res) => {
     Company.findOne({
         where: {
           id: req.params.id
-        }
+        },
+        include: [
+          //include the Hours model here - one to one
+          {
+          model: Hours,
+          attributes: ['mon', 'tues', 'wed', 'thurs', 'fri', 'sat', 'sun']
+          },
+          //include the Industry model here
+          {
+          model: Industry,
+          attributes: ['industry_name']
+          },
+          //add product data
+          {
+          model: Product,
+          attributes: ['id', 'product_name', 'description_text']  
+          },
+          //add user data
+          {
+          model: User,
+          attributes: ['id', 'username', 'email']
+          }  
+      ]
       })
         .then(dbCompanyData => {
           if (!dbCompanyData) {

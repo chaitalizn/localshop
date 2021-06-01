@@ -7,32 +7,32 @@
 <!-- NAME -->
   <div class="col-md-4">
     <label for="inputCompanyName" class="form-label">Business Name</label>
-    <input type="text" class="form-control" id="inputCompanyName">
+    <input type="text" class="form-control" value="{{company.company_name}}" id="inputCompanyName">
   </div>
 <!-- Address -->
   <div class="col-4">
     <label for="Address" class="form-label">Address</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+    <input type="text" class="form-control" value="{{company.address}}" id="inputAddress" placeholder="1234 Main St">
   </div>
 <!-- Phone Number -->
   <div class="col-4">
     <label for="phone" class="form-label">Phone</label>
-    <input type="text" class="form-control" id="phone" placeholder="9058524562">
+    <input type="text" class="form-control" value="{{company.phone}}" id="phone" placeholder="9058524562">
   </div>
 <!-- Company Email -->
   <div class="col-4">
     <label for="company-email" class="form-label">Business Email</label>
-    <input type="text" class="form-control" id="company-email" placeholder="company@gmail.com">
+    <input type="text" class="form-control" value="{{company.company-email}}" id="company-email" placeholder="company@gmail.com">
   </div>
 <!-- website -->
   <div class="col-4">
-    <label for="Website" class="form-label">Website</label>
-    <input type="text" class="form-control" id="website" placeholder="www.test.com">
+    <label for="website" class="form-label">Website</label>
+    <input type="text" class="form-control" value="{{company.website}}"id="website" placeholder="www.test.com">
   </div>
 <!-- Industry -->
     <div class="col-md-4 mt-4">
     <!--<label for="industry" class="form-label">Industry</label> -->
-    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+    <select class="form-select form-select-lg mb-3" value="{{company.industry.industry_name}}" aria-label=".form-select-lg example">
       <option selected>Choose a industry...</option>
       <option value="1">1</option>
       <option value="2">2</option>
@@ -41,8 +41,8 @@
   </div>
 <!-- About Us -->
   <div class="col-md-12">
-    <label for="about-us" class="form-label">About Us</label>
-    <textarea type="text" class="form-control" id="about-us"> </textarea>
+    <label for="about" class="form-label">About Us</label>
+    <textarea name="about" class="form-control" id="about">{{company.about}}</textarea>
   </div>
 <!-- Hours -->
 <div class="container-fluid mt-3">
@@ -52,31 +52,31 @@
     </div>
     <div class="col">
     <label for="mon" class="form-label">Mon</label>
-    <input type="text" class="form-control" id="mon"> 
+    <input type="text" class="form-control" value="{{company.hour.mon}}" id="mon"> 
     </div>
     <div class="col">
     <label for="tues" class="form-label">Tues</label>
-    <input type="text" class="form-control" id="tues">
+    <input type="text" class="form-control" value="{{company.hour.tues}}" id="tues">
     </div>
     <div class="col">
     <label for="wed" class="form-label">Wed</label>
-    <input type="text" class="form-control" id="wed">
+    <input type="text" class="form-control" value="{{company.hour.wed}}" id="wed">
     </div>
     <div class="col">
     <label for="thurs" class="form-label">Thurs</label>
-    <input type="text" class="form-control" id="thurs">
+    <input type="text" class="form-control" value="{{company.hour.thurs}}" id="thurs">
     </div>
     <div class="col">
     <label for="fri" class="form-label">Fri</label>
-    <input type="text" class="form-control" id="fri">
+    <input type="text" class="form-control" value="{{company.hour.fri}}" id="fri">
     </div>
     <div class="col">
     <label for="sat" class="form-label">Sat</label>
-    <input type="text" class="form-control" id="sat">
+    <input type="text" class="form-control" value="{{company.hour.sat}}" id="sat">
     </div>
     <div class="col">
     <label for="sun" class="form-label">Sun</label>
-    <input type="text" class="form-control" id="sun">
+    <input type="text" class="form-control" value="{{company.hour.sun}}" id="sun">
     </div>
 </div>
 </div>
@@ -87,12 +87,12 @@
  <div class="col-md-4">
     <label for="product_name" class="form-label">Products /
     Service</label>
-    <input type="text" class="form-control" id="product-name" placeholder="item-1">
+    <input type="text" class="form-control" value="{{company.products.product_name}}" id="product-name" placeholder="item-1">
   </div>
 <!-- Products description -->
   <div class="col-md-8">
-    <label for="description_text" class="form-label">About Us</label>
-    <textarea type="text" class="form-control" id="description_text"> </textarea>
+    <label for="description_text" class="form-label">Product Description</label>
+    <textarea name="description_text" class="form-control" id="description_text">{{company.products.description_text}}</textarea>
   </div>
   </div>
 </div>

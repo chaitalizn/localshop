@@ -1,38 +1,59 @@
-<form class="signup-form">
-<h3>New to Localshop?  Sign up here!</h3>
-  <div>
-    <label for="username-signup">Username:</label>
-    <input type="text" id="username-signup" />
-    <h4>Must be at least 8 characters</h4>
-    <h4>Username is case sensitive</h4>
+<form class="login-form p-3 col-6 mx-auto mt-4">
+  <h1 class="display-5 text-center">LocalShop Login</h1>
+  <div class="mb-3 mt-4">
+    <label for="email-login" class="form-label">Email Address:</label>
+    <input type="text" class="form-control" id="email-login" />
   </div>
-  <div>
-    <label for="email-signup">Email:</label>
-    <input type="text" id="email-signup" />
+  <div class="mb-4">
+    <label for="password-login" class="form-label">Password:</label>
+    {{!-- change input type to password --}}
+    <input type="text" class="form-control" id="password-login"/>
   </div>
-  <div>
-    <label for="password-signup">Password:</label>
-    <input type="text" id="password-signup" />
-    <h4>Must be at least 8 characters</h4>
-  </div>
-  <div>
-    <button type="submit">Signup</button>
+  <div class="d-grid gap-2 col-6 mx-auto">
+    <button type="submit" class="btn btn-primary">Login</button>
+    <button type="click" class="btn btn-success col-6 mx-auto" data-bs-toggle="modal" data-bs-target="#signup-modal">New User</button>
   </div>
 </form>
 
-<form class="login-form">
-<h3>Returning Users</h3>
-  <div>
-    <label for="email-login">Email:</label>
-    <input type="text" id="email-login" />
+<div class="modal" tabindex="-1" id="signup-modal">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">New User Signup</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <form class="signup-form"></form>
+          <div class="modal-body">
+
+            <div class="mb-3">
+              <label for="email-login" class="form-label">Email Username:</label>
+              <input type="text" class="form-control" id="username-signup" />
+              <div class="form-text">Make it something fun!</div>
+            </div>
+            <div class="mb-3">
+              <label for="email-login" class="form-label">Email Address:</label>
+              <input type="text" class="form-control" id="email-signup" />
+              <div class="form-text">Your email is safe with us.</div>
+            </div>
+            <div class="mb-3">
+              <label for="password-login" class="form-label">Password:</label>
+              {{!-- change input type to password --}}
+              <input type="text" class="form-control" id="password-signup"/>
+              <div class="form-text">Password must be greater than 8 characters.</div>
+            </div>
+            
+          </div>
+          <div class="modal-footer">
+            <button type="submit" id="signup-button" class="btn btn-primary">Signup</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
   </div>
-  <div>
-    <label for="password-login">Password:</label>
-    <input type="text" id="password-login" />
-  </div>
-  <div>
-    <button type="submit">Login</button>
-  </div>
-</form>
+</div>
 
 <script src="/javascript/login.js"></script>
