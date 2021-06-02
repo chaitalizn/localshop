@@ -1,25 +1,43 @@
-async function editFormHandler(event) {
+//const { User } = require("../../models");
+
+async function newFormHandler(event) {
   event.preventDefault();
 
-  const title = document.querySelector('input[name="post-title"]').value.trim();
-  const id = window.location.toString().split('/')[
-    window.location.toString().split('/').length - 1
-  ];
-  const response = await fetch(`/api/posts/${id}`, {
+  console.log('this is working');
+  const company_name = document.querySelector('input[name="company-name"]').value;
+  const address = document.querySelector('input[name="address"]').value;
+  const phone = document.querySelector('input[name="phone"]').value;
+  const company_email = document.querySelector('input[name="company-email"]').value;
+  const website = document.querySelector('input[name="website"]').value;
+  const about = document.querySelector('textarea[name="about"]').value;
+  const industry_id = document.querySelector('select[name="industry"]').value;
+  
+
+  const response = await fetch(`/api/company/user`, {
     method: 'PUT',
     body: JSON.stringify({
-      title
+      company_name,
+      address,
+      phone,
+      company_email,
+      website,
+      about,
+      industry_id
     }),
     headers: {
       'Content-Type': 'application/json'
     }
-  });
+  }
+  );
 
+  const responseTwo = await response.json()
+
+  console.log(responseTwo);
   if (response.ok) {
-    document.location.replace('/dashboard/');
+    document.location.replace('/dashboard');
   } else {
     alert(response.statusText);
   }
 }
 
-document.querySelector('.edit-post-form').addEventListener('submit', editFormHandler);
+document.querySelector('.company-info-form').addEventListener('submit', newFormHandler);

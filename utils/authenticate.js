@@ -1,10 +1,10 @@
 function authenticate(req, res, next){
-    if(!res.session){
+    if(!req.session.user_id){
         res.redirect('/login');
     }
     else{
         next();
     }
-}
+};
 
 module.exports = authenticate;

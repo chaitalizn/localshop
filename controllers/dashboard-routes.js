@@ -3,8 +3,10 @@ const sequelize = require('../config/connection');
 const { Company, Hours, Industry, Product, User } = require('../models');
 const authenticate = require('../utils/authenticate');
 
+
+
 //GET route for the main page
-router.get('/', authenticate,(req, res) => {
+router.get('/', (req, res) => {
     //hardcoded data for testing ONLY
     Company.findOne({
       where: {
@@ -20,7 +22,7 @@ router.get('/', authenticate,(req, res) => {
     })
     .then(dbCompanyData => {
       if (!dbCompanyData) {
-        res.render('dashboard', {loggedIn: req.session.loggedIn});
+        res.render('dashboard',  {company: false, loggedIn: req.session.loggedIn});
         return;
       }
       const company = dbCompanyData.get({plain: true})

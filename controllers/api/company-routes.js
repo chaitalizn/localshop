@@ -107,6 +107,40 @@ router.post('/', (req, res) => {
       });
   }); 
 
+
+// NEW PUT route
+//GET route for the main page
+router.put('/user', (req, res) => {
+  User.findOne({
+    where: {
+      id: req.session.user_id
+    },
+    include: Company
+  })
+  .then(dbUserData => {
+    //hardcoded data for testing ONLY
+    var company_id = dbUserData.companies[0].id;
+    req.body.user_id = req.session.user_id;
+    Company.update(req.body, {
+      where: {
+        //id:1
+        id: company_id
+      }
+    })
+    .then(dbCompanyData => {
+      if (!dbCompanyData[0]) {
+        res.status(404).json({ message: 'No company found with this id' });
+        return;
+      }
+      res.json(dbCompanyData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+  })
+});
+
 // PUT /api/users/1 - update selected company info
 router.put('/:id', (req, res) => {
   Company.update(req.body, {
@@ -126,6 +160,7 @@ router.put('/:id', (req, res) => {
       res.status(500).json(err);
     });
 });
+
 
 // DELETE /api/users/1 - delete a company
 router.delete('/:id', (req, res) => {

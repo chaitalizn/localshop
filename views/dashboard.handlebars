@@ -97,15 +97,21 @@
   </div>
 </div>
 <!-- Save button -->
+{{#if company}}
+<div class="col-12 d-flex justify-content-end mt-4">
+    <button type="submit" class="btn btn-primary">Update</button>
+  </div> 
+</div>
+{{else}}
 <div class="row" >
-    <div class="col-11 d-flex justify-content-end mt-4">
+    <div class="col-12 d-flex justify-content-end mt-4">
     <button type="submit" class="btn btn-primary">Save</button>
   </div>
-<!-- Update button 
-<div class="col-1 d-flex justify-content-end mt-4">
-    <button type="submit" class="btn btn-primary">Update</button>
-  </div> -->
-</div>
+{{/if}}
 </form>
 
+{{#if company}}
+<script src="/javascript/edit-company.js"></script>
+{{else}}
 <script src="/javascript/add-company.js"></script>
+{{/if}}
