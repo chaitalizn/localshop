@@ -1,9 +1,10 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Company, Hours, Industry, Product, User } = require('../models');
+const authenticate = require('../utils/authenticate');
 
 //GET route for the main page
-router.get('/', (req, res) => {
+router.get('/', authenticate, (req, res) => {
   User.findOne({
     where: {id: req.session.user_id},
     include: Company
