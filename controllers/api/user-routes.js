@@ -63,7 +63,7 @@ router.post('/', (req, res) => {
 
         //after session has been saved, send a redirect to home response back
         console.log(req.session);
-        res.redirect('/');
+        res.redirect('/dashboard');
     })
     .catch(err => res.status(500).json(err));
 });
@@ -96,7 +96,7 @@ router.post('/login', (req, res) => {
 
         //after session has been saved, send a redirect to home response back
         console.log(req.session);
-        res.redirect('/');
+        res.redirect('/dashboard');
     })
     .catch(err => res.status(500).json(err));
 });

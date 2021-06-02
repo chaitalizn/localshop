@@ -26,6 +26,9 @@ async function loginFormHandler(event) {
       alert('Error: ' + response.statusText);
     }
   }
+  else{
+    alert('Please enter your email and password to log in.')
+  }
 }
 
 //signup
@@ -56,6 +59,9 @@ async function signupFormHandler(event) {
     else{
       alert('Error: ' + response.statusText);
     }
+  }
+  else{
+    alert('Please enter your username, email, and password to sign up.')
   }
 }
 
