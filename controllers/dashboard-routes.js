@@ -9,8 +9,8 @@ router.get('/', (req, res) => {
     //hardcoded data for testing ONLY
     Company.findOne({
       where: {
-        id: 1
-        //id: req.session.user.id
+        //id: 1
+        id: req.session.user_id
       },
       include: [
         User,
