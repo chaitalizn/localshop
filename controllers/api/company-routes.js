@@ -97,8 +97,7 @@ router.post('/', (req, res) => {
         website: req.body.website,
         about: req.body.about,
         industry_id: req.body.industry_id,
-        user_id: 1
-        //user_id: req.session.user_id
+        user_id: req.session.user_id
     })
       .then(dbCompanyData => res.json(dbCompanyData))
       .catch(err => {
@@ -123,7 +122,6 @@ router.put('/user', (req, res) => {
     req.body.user_id = req.session.user_id;
     Company.update(req.body, {
       where: {
-        //id:1
         id: company_id
       }
     })

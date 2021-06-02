@@ -30,11 +30,8 @@ async function newFormHandler(event) {
   }
   );
 
-  const responseTwo = await response.json()
-
-  console.log(responseTwo);
   if (response.ok) {
-    document.location.replace('/dashboard');
+    document.location.replace('/searchAll');
   } else {
     alert(response.statusText);
   }
