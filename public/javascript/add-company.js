@@ -1,14 +1,21 @@
 async function newFormHandler(event) {
   event.preventDefault();
 
-  const title = document.querySelector('input[name="post-title"]').value;
-  const post_url = document.querySelector('input[name="post-url"]').value;
+  const company_name = document.querySelector('input[id="company-name"]').value;
+  const address = document.querySelector('input[id="address"]').value;
+  const phone = document.querySelector('input[id="phone"]').value;
+  const company_email = document.querySelector('input[id="company-email"]').value;
+  const website = document.querySelector('input[id="website"]').value;
+  const about = document.querySelector('input[id="about"]').value;
+  const industry = document.querySelector('input[id="industry"]').value;
 
-  const response = await fetch(`/api/posts`, {
+
+
+  const response = await fetch(`/api/company`, {
     method: 'POST',
     body: JSON.stringify({
-      title,
-      post_url
+      company_name,
+      address
     }),
     headers: {
       'Content-Type': 'application/json'
@@ -22,4 +29,4 @@ async function newFormHandler(event) {
   }
 }
 
-document.querySelector('.new-post-form').addEventListener('submit', newFormHandler);
+document.querySelector('.company-info-form').addEventListener('submit', newFormHandler);

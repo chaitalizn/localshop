@@ -19,22 +19,22 @@ router.get('/', (req, res) => {
             //include the Hours model here - one to one
             {
             model: Hours,
-            attributes: ['mon', 'tues', 'wed', 'thurs', 'fri', 'sat', 'sun']
+            //attributes: ['mon', 'tues', 'wed', 'thurs', 'fri', 'sat', 'sun']
             },
             //include the Industry model here
             {
             model: Industry,
-            attributes: ['industry_name']
+            //attributes: ['industry_name']
             },
             //add product data
             {
             model: Product,
-            attributes: ['id', 'product_name', 'description_text']  
+            //attributes: ['id', 'product_name', 'description_text']  
             },
             //add user data
             {
             model: User,
-            attributes: ['id', 'username', 'email']
+            //attributes: ['id', 'username', 'email']
             }  
         ]
     })
@@ -97,7 +97,7 @@ router.post('/', (req, res) => {
         website: req.body.website,
         about: req.body.about,
         industry_id: req.body.industry_id,
-        user_id: req.body.user_id
+        user_id: req.session.user_id
     })
       .then(dbCompanyData => res.json(dbCompanyData))
       .catch(err => {

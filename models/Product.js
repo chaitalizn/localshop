@@ -13,14 +13,14 @@ Product.init(
     },
     product_name: {
       type: DataTypes.STRING,
-      allowNull: false,
+      //allowNull: false,
       validate: {
         len: [1]
       }
     },
     description_text: {
-      type: DataTypes.STRING,
-      allowNull: false,
+      type: DataTypes.TEXT,
+      //allowNull: false,
       validate: {
         len: [1]
       }
