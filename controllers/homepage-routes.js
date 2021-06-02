@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Company, Industry, Hours, Products } = require('../models');
+const { User, Company, Industry, Hours, Product } = require('../models');
 
 //Home Routes: /
 //=============================================================================
@@ -20,7 +20,7 @@ router.get('/company/:id', (req, res) => {
         where: {
           id: req.params.id
         },
-        include: Hours, Product
+        include: Hours
       })
         .then(dbCompanyData => {
           if (!dbCompanyData) {
