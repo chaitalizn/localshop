@@ -1,8 +1,6 @@
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">{{company.company_name}}</h5>
-    <p class="card-text">{{company.about}}</p>
-    <h6 class="card-subtitle mb-2 text-muted">Phone: {{company.phone}}</h6>
-    <a href="#" class="card-link">View more</a>
-  </div>
+
+<div class="d-flex flex-wrap justify-content-center">
+  {{#each companies as |company|}}
+    {{> company-card company}}
+  {{/each}}
 </div>
