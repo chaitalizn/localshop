@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Company, Industry, Hours, Products } = require('../models');
+const { User, Company, Industry, Hours, Product } = require('../models');
 
 //Home Routes: /
 //=============================================================================
@@ -13,6 +13,29 @@ router.get('/', (req, res) => {
 router.get('/login', (req, res) => {
     res.render('login');
 })
+
+//Single Company Page Route
+router.get('/company/:id', (req, res) => {
+    Company.findOne({
+        where: {
+          id: req.params.id
+        },
+        include: Hours
+      })
+        .then(dbCompanyData => {
+          if (!dbCompanyData) {
+            res.status(404).json({ message: 'No company found with this id' });
+            return;
+          }
+       /*    res.json(dbCompanyData); */
+          const company = dbCompanyData.get({plain:true});
+          res.render('company', {company});
+        })
+        .catch(err => {
+          console.log(err);
+          res.status(500).json(err);
+        });
+});
 
 //Result Page Route
 router.get('/result/:id', (req, res) => {

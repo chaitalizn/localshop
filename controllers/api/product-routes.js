@@ -34,7 +34,7 @@ router.put('/:id', (req, res) => {
     Product.update(
       {
         product_name: req.body.product_name,
-        description_text: req.body.discription_text,
+        description_text: req.body.description_text,
         company_id: req.body.company_id,
       },
       {
