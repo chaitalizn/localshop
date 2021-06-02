@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
   })
   .then(dbUserData => {
     if(!dbUserData.companies[0]){
-      res.render('dashboard',  { company: false, loggedIn: req.session.loggedIn });
+      res.render('dashboard',  { company: false, loggedIn: req.session.loggedIn, username: req.session.username });
         return;
     }
 
@@ -21,7 +21,7 @@ router.get('/', (req, res) => {
     })
     .then(dbCompanyData => {
       const company = dbCompanyData.get({plain: true})
-      res.render('dashboard', {company, loggedIn: req.session.loggedIn });
+      res.render('dashboard', {company, loggedIn: req.session.loggedIn, username: req.session.username });
     })
   })
   .catch(err => res.status(500).json(err));

@@ -57,6 +57,7 @@ router.post('/', (req, res) => {
     })
     .then(createdUser => {
         //If the user is validated then we can update the session data
+        req.session.username = createdUser.username;
         req.session.email = createdUser.email,
         req.session.user_id = createdUser.id,
         req.session.loggedIn = true;
@@ -92,6 +93,7 @@ router.post('/login', (req, res) => {
         }
 
         //If the user is validated then we can update the session data
+        req.session.username = dbUserData.username;
         req.session.email = dbUserData.email;
         req.session.user_id = dbUserData.id,
         req.session.loggedIn = true;
