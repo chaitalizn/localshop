@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 3001;
 //define the session configuration and cookie settings for the session
 const sess = {
     secret: 'An amazing secret for nobody to see or use',
-    cookie: { maxAge: 60000 * 2 },
+    cookie: { maxAge: 60000 * 10 },
     rolling: true,
     resave: false,
     saveUninitialized: true,
@@ -39,7 +39,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(routes);
 
 //Sync sequelize tables with local database
-sequelize.sync({force: false}).then(() => {
+sequelize.sync({force: true}).then(() => {
     console.log("Connected to sequelize.");
 
     //Instruct server to listen on the designated port

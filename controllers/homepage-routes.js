@@ -29,7 +29,7 @@ router.get('/company/:id', (req, res) => {
           }
        /*    res.json(dbCompanyData); */
           const company = dbCompanyData.get({plain:true});
-          res.render('company', {company});
+          res.render('company', {company, loggedIn: req.session.loggedIn});
         })
         .catch(err => {
           console.log(err);
@@ -45,7 +45,7 @@ router.get('/searchAll', (req, res) => {
         const companies = dbCompanyData.map(company => company.get({plain: true}));
 
         //pass the company data to the result page
-        res.render('result', {companies});
+        res.render('result', {companies, loggedIn: req.session.loggedIn});
     })
     .catch(err => res.status(500).json(err));
 })

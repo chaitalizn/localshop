@@ -2,37 +2,58 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Company, Hours, Industry, Product, User } = require('../models');
 
-
-
 //GET route for the main page
 router.get('/', (req, res) => {
-    //hardcoded data for testing ONLY
+  User.findOne({
+    where: {id: req.session.user_id},
+    include: Company
+  })
+  .then(dbUserData => {
+    if(!dbUserData.companies[0]){
+      res.render('dashboard',  { company: false, loggedIn: req.session.loggedIn });
+        return;
+    }
+
+    var company_id = dbUserData.companies[0].id;
     Company.findOne({
-      where: {
-        id: 1
-        //id: req.session.user.id
-      },
-      include: [
-        User,
-        Hours,
-        Industry,
-        Product
-      ]
+      where: {id: company_id},
+      include: [User,Hours, Industry,Product]
     })
     .then(dbCompanyData => {
-      if (!dbCompanyData) {
-        res.render('dashboard',  {company: false, loggedIn: req.session.loggedIn});
-        return;
-      }
-
       const company = dbCompanyData.get({plain: true})
       res.render('dashboard', {company, loggedIn: req.session.loggedIn });
     })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
+  })
+  .catch(err => res.status(500).json(err));
 });
+
+// //GET route for the main page
+// router.get('/', (req, res) => {
+//     Company.findOne({
+//       where: {
+//         id: req.session.user_id
+//       },
+//       include: [
+//         User,
+//         Hours,
+//         Industry,
+//         Product
+//       ]
+//     })
+//     .then(dbCompanyData => {
+//       if (!dbCompanyData) {
+//         res.render('dashboard',  {company: false, loggedIn: req.session.loggedIn});
+//         return;
+//       }
+
+//       const company = dbCompanyData.get({plain: true})
+//       res.render('dashboard', {company, loggedIn: req.session.loggedIn });
+//     })
+//     .catch(err => {
+//       console.log(err);
+//       res.status(500).json(err);
+//     });
+// });
 
 
 module.exports = router;

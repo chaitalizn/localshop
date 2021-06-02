@@ -3,6 +3,24 @@
 	font-family: "Nunito", sans-serif;
 }
 
+body, html{
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.wrapper{
+	width: 100%;
+    min-height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+main{
+	flex: 1
+}
+
 .dim {
 	filter: brightness(80%);
 }
@@ -98,6 +116,7 @@ body {
 	/* Sizing */
 	width: 100vw;
 	height: 100vh;
+	max-width: 100%;
 
 	/* Flexbox  */
 	display: flex;
