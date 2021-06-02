@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Company, Hours, Industry, Product, User } = require('../models');
-const authenticate = require('../utils/authenticate');
 
 
 
@@ -25,9 +24,10 @@ router.get('/', (req, res) => {
         res.render('dashboard',  {company: false, loggedIn: req.session.loggedIn});
         return;
       }
+
       const company = dbCompanyData.get({plain: true})
       res.render('dashboard', {company, loggedIn: req.session.loggedIn });
-      })
+    })
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
