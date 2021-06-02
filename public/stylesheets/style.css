@@ -14,7 +14,7 @@ footer{
   padding: 1% 0;
 }
 
-header a, footer a{
+a{
   text-decoration: none;
   color: white
 }
@@ -92,7 +92,7 @@ body {
 .hero {
   /* Sizing */
   width: 100vw;
-  height: 60vh;
+  height: 100vh;
   
   /* Flexbox  */
   display: flex;
@@ -147,4 +147,3 @@ body {
   border: 3px solid white; 
   border-radius: 20px;
 }
-
