@@ -97,7 +97,8 @@ router.post('/', (req, res) => {
         website: req.body.website,
         about: req.body.about,
         industry_id: req.body.industry_id,
-        user_id: req.session.user_id
+        user_id: 1
+        //user_id: req.session.user_id
     })
       .then(dbCompanyData => res.json(dbCompanyData))
       .catch(err => {

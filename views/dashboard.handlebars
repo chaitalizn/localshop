@@ -17,22 +17,22 @@
 <!-- Phone Number -->
   <div class="col-4">
     <label for="phone" class="form-label">Phone</label>
-    <input type="text" class="form-control" value="{{company.phone}}" id="phone" placeholder="9058524562">
+    <input name="phone" type="text" class="form-control" value="{{company.phone}}" id="phone" placeholder="9058524562">
   </div>
 <!-- Company Email -->
   <div class="col-4">
     <label for="company-email" class="form-label">Business Email</label>
-    <input type="text" class="form-control" value="{{company.company_email}}" id="company-email" placeholder="company@gmail.com">
+    <input name="company-email" type="text" class="form-control" value="{{company.company_email}}" id="company-email" placeholder="company@gmail.com">
   </div>
 <!-- website -->
   <div class="col-4">
     <label for="website" class="form-label">Website</label>
-    <input type="text" class="form-control" value="{{company.website}}"id="website" placeholder="www.test.com">
+    <input name="website" type="text" class="form-control" value="{{company.website}}"id="website" placeholder="www.test.com">
   </div>
 <!-- Industry -->
     <div class="col-md-4">
     <label for="industry" class="form-label">Industry</label>
-    <select class="form-select  mb-3" id="industry" value="{{company.industry.industry_name}}" aria-label=".form-select-lg example">
+    <select name="industry" class="form-select  mb-3" id="industry" value="{{company.industry.industry_name}}" aria-label=".form-select-lg example">
       <option selected>Choose a industry...</option>
       <option value="1">1</option>
       <option value="2">2</option>
@@ -101,10 +101,10 @@
     <div class="col-11 d-flex justify-content-end mt-4">
     <button type="submit" class="btn btn-primary">Save</button>
   </div>
-<!-- Update button -->
+<!-- Update button 
 <div class="col-1 d-flex justify-content-end mt-4">
     <button type="submit" class="btn btn-primary">Update</button>
-  </div>
+  </div> -->
 </div>
 </form>
 

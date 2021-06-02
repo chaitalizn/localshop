@@ -1,27 +1,38 @@
 async function newFormHandler(event) {
   event.preventDefault();
 
-  const company_name = document.querySelector('input[id="company-name"]').value;
-  const address = document.querySelector('input[id="address"]').value;
-  const phone = document.querySelector('input[id="phone"]').value;
-  const company_email = document.querySelector('input[id="company-email"]').value;
-  const website = document.querySelector('input[id="website"]').value;
-  const about = document.querySelector('input[id="about"]').value;
-  const industry = document.querySelector('input[id="industry"]').value;
-
-
+  console.log('this is working');
+  const company_name = document.querySelector('input[name="company-name"]').value;
+  const address = document.querySelector('input[name="address"]').value;
+  const phone = document.querySelector('input[name="phone"]').value;
+  const company_email = document.querySelector('input[name="company-email"]').value;
+  const website = document.querySelector('input[name="website"]').value;
+  const about = document.querySelector('textarea[name="about"]').value;
+  const industry_id = document.querySelector('select[name="industry"]').value;
+  const user_id = 1
 
   const response = await fetch(`/api/company`, {
     method: 'POST',
     body: JSON.stringify({
       company_name,
-      address
+      address,
+      phone,
+      company_email,
+      website,
+      about,
+      industry_id,
+      user_id
+
     }),
     headers: {
       'Content-Type': 'application/json'
     }
-  });
+  }
+  );
 
+  const responseTwo = await response.json()
+
+  console.log(responseTwo);
   if (response.ok) {
     document.location.replace('/dashboard');
   } else {
