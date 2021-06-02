@@ -18,31 +18,31 @@ Hours.init(
         },
         mon: {
             type: DataTypes.STRING,
-            allowNull: false,
+            //allowNull: false,
         },
         tues: {
             type: DataTypes.STRING,
-            allowNull: false,
+            //allowNull: false,
         },
         wed: {
             type: DataTypes.STRING,
-            allowNull: false,
+            //allowNull: false,
         },
         thurs: {
             type: DataTypes.STRING,
-            allowNull: false,
+            //allowNull: false,
         },
         fri: {
             type: DataTypes.STRING,
-            allowNull: false,
+            //allowNull: false,
         },
         sat: {
             type: DataTypes.STRING,
-            allowNull: false,
+            //allowNull: false,
         },
         sun: {
             type: DataTypes.STRING,
-            allowNull: false,
+            //allowNull: false,
         },
         company_id: {
             type: DataTypes.INTEGER,
