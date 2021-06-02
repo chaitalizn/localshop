@@ -1,0 +1,51 @@
+<div class="container text-center">
+
+    <div class="row">
+        <section class="company-name col-sm-12">
+            <h1>{{company.company_name}}</h1>
+        </section>
+    </div>
+
+    <div class="row">
+        <section class="company-name col-sm-12">
+            <a href="{{company.website}}">{{company.company_name}}</a>
+        </section>
+    </div>
+
+    <div class="row company-info">
+        <div class="company col-sm-4">
+            <section class="address">
+                <h1>Where Are We</h1>
+                {{company.address}}
+            </section>
+        </div>
+
+        <div class="hours col-sm-4">
+            <section>
+                <h1 >Store Hours</h1>
+                <div class="d-flex flex-column">
+                    <span>Monday: {{company.hour.mon}}</span>
+                    <span>Tuesday: {{company.hour.tues}}</span>
+                    <span>Wednesday: {{company.hour.wed}}</span>
+                    <span>Thursday: {{company.hour.thurs}}</span>
+                    <span>Friday: {{company.hour.fri}}</span>
+                    <span>Saturday: {{company.hour.sat}}</span>
+                    <span>Sunday: {{company.hour.sun}}</span> 
+                </div>
+            </section>
+        </div>
+   
+        <section class="phone col-sm-4">
+            <h1>Call Us</h1>
+            {{company.phone}}
+        </section>
+    </div>
+
+   <div class="row">
+        <section class="about col-sm-12">
+            <h1>Who We Are</h1>
+            {{company.about}}
+        </section>
+   </div>
+</div>
+
