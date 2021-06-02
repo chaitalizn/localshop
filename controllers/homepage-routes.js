@@ -27,4 +27,17 @@ router.get('/result/:id', (req, res) => {
     res.render('result');
 })
 
+router.get('/searchAll', (req, res) => {
+    Company.findAll({})
+    .then(dbCompanyData => {
+
+        //Get all companies and then map them to a serialized companies array
+        const companies = dbCompanyData.map(company => company.get({plain: true}));
+
+        //pass the company data to the result page
+        res.render('result', {companies});
+    })
+    .catch(err => res.status(500).json(err));
+})
+
 module.exports = router;
