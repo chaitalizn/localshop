@@ -58,10 +58,12 @@ router.put('/:id', (req, res) => {
 
 router.post('/', (req,res) => {
     //expects {product_name: "Ceramic Cup", description_text: "handmade cup made of clay", company_id: 1}
+    //company id will match the user_id in the session
     Product.create({
         product_name: req.body.product_name,
         description_text: req.body.description_text,
-        company_id: req.body.company_id
+        //company_id: req.body.company_id
+        company_id: req.session.user_id
     })
     .then(dbProductData => res.json(dbProductData))
     .catch(err => {

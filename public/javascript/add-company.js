@@ -24,6 +24,13 @@ function setNewHoursObject(){
   return {mon, tues, wed, thurs, fri, sat, sun};
 }
 
+function setNewProductArray(){
+  const product_name = document.querySelector('#product-name').value.trim();
+  const description_text = document.querySelector('#description-text').value.trim();
+
+  return {product_name, description_text};
+}
+
 async function newFormHandler(event) {
   event.preventDefault();
 
@@ -38,6 +45,13 @@ async function newFormHandler(event) {
   const responseHours = await fetch(`/api/hours`, {
     method: 'POST',
     body: JSON.stringify(setNewHoursObject()),
+    headers: {'Content-Type': 'application/json'}
+  });
+
+  //Await the response to create new product
+  const responseProduct = await fetch('/api/product', {
+    method: 'Post',
+    body: JSON.stringify(setNewProductArray()),
     headers: {'Content-Type': 'application/json'}
   });
 
