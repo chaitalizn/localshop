@@ -13,7 +13,7 @@ Company.belongsTo(User, {foreignKey: 'user_id'});
 //A company has only a single set of weekly hours
 Company.hasOne(Hours, {foreignKey: 'company_id'});
 //A set of hours can only belong to a single company 
-Hours.belongsTo(Company, {foreignKey: 'hours_id'});
+Hours.belongsTo(Company, {foreignKey: 'company_id'});
 
 //An industry has many companies in it
 Industry.hasMany(Company, {foreignKey: 'industry_id'});

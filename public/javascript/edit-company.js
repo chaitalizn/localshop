@@ -1,3 +1,4 @@
+//Returns all of the necessary fields, via object, from the form to update a new company
 function setUpdateCompanyObject(){
   const company_name = document.querySelector('input[name="company-name"]').value;
   const address = document.querySelector('input[name="address"]').value;
@@ -10,20 +11,42 @@ function setUpdateCompanyObject(){
   return {company_name, address, phone, company_email, website, about, industry_id};
 }
 
-async function newFormHandler(event) {
+//Returns all of the necessary fields, via object, from the form to update new hours
+function setNewHoursObject(){
+  const mon = document.querySelector("#mon").value.trim();
+  const tues = document.querySelector("#tues").value.trim();
+  const wed = document.querySelector("#wed").value.trim();
+  const thurs = document.querySelector("#thurs").value.trim();
+  const fri = document.querySelector("#fri").value.trim();
+  const sat = document.querySelector("#sat").value.trim();
+  const sun = document.querySelector("#sun").value.trim();
+
+  return {mon, tues, wed, thurs, fri, sat, sun};
+}
+
+async function updateFormHandler(event) {
   event.preventDefault();
   
+  //Await the response to update a company
   const response = await fetch(`/api/company/user`, {
     method: 'PUT',
     body: JSON.stringify(setUpdateCompanyObject()),
     headers: {'Content-Type': 'application/json'}
   });
 
-  if (response.ok) {
-    document.location.replace('/searchAll');
-  } else {
-    alert(response.statusText);
+  //Await the response to create update hours
+  const responseHours = await fetch(`/api/hours`, {
+    method: 'PUT',
+    body: JSON.stringify(setNewHoursObject()),
+    headers: {'Content-Type': 'application/json'}
+  });
+
+  if (response.ok && responseHours.ok) {
+    document.location.replace(`/searchAll`);
+  } 
+  else {
+    alert(response.statusText + responseHours.statusText);
   }
 }
 
-document.querySelector('.company-info-form').addEventListener('submit', newFormHandler);
+document.querySelector('.company-info-form').addEventListener('submit', updateFormHandler);
