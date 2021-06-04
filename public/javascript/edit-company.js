@@ -1,6 +1,4 @@
-async function newFormHandler(event) {
-  event.preventDefault();
-
+function setUpdateCompanyObject(){
   const company_name = document.querySelector('input[name="company-name"]').value;
   const address = document.querySelector('input[name="address"]').value;
   const phone = document.querySelector('input[name="phone"]').value;
@@ -8,21 +6,17 @@ async function newFormHandler(event) {
   const website = document.querySelector('input[name="website"]').value;
   const about = document.querySelector('textarea[name="about"]').value;
   const industry_id = document.querySelector('select[name="industry"]').value;
+
+  return {company_name, address, phone, company_email, website, about, industry_id};
+}
+
+async function newFormHandler(event) {
+  event.preventDefault();
   
   const response = await fetch(`/api/company/user`, {
     method: 'PUT',
-    body: JSON.stringify({
-      company_name,
-      address,
-      phone,
-      company_email,
-      website,
-      about,
-      industry_id
-    }),
-    headers: {
-      'Content-Type': 'application/json'
-    }
+    body: JSON.stringify(setUpdateCompanyObject()),
+    headers: {'Content-Type': 'application/json'}
   });
 
   if (response.ok) {
