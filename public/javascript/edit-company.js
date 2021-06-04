@@ -1,9 +1,6 @@
-//const { User } = require("../../models");
-
 async function newFormHandler(event) {
   event.preventDefault();
 
-  console.log('this is working');
   const company_name = document.querySelector('input[name="company-name"]').value;
   const address = document.querySelector('input[name="address"]').value;
   const phone = document.querySelector('input[name="phone"]').value;
@@ -12,7 +9,6 @@ async function newFormHandler(event) {
   const about = document.querySelector('textarea[name="about"]').value;
   const industry_id = document.querySelector('select[name="industry"]').value;
   
-
   const response = await fetch(`/api/company/user`, {
     method: 'PUT',
     body: JSON.stringify({
@@ -27,8 +23,7 @@ async function newFormHandler(event) {
     headers: {
       'Content-Type': 'application/json'
     }
-  }
-  );
+  });
 
   if (response.ok) {
     document.location.replace('/searchAll');
