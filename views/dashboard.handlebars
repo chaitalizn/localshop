@@ -32,9 +32,9 @@
 <!-- Industry -->
     <div class="col-md-4">
     <label for="industry" class="form-label">Industry</label>
-    <select name="industry" class="form-select  mb-3" id="industry" value="{{company.industry.industry_name}}" aria-label=".form-select-lg example">
+    <select name="industry" class="form-select  mb-3" id="industry" aria-label=".form-select-lg example">
       <option selected>Choose a industry...</option>
-      <option value="1">Furniture</option>
+      <option value="1" {{#if company.industry.id}}selected{{/if}}>Furniture</option>
       <option value="2">Wearable Accessories</option>
       <option value="3">Apparel</option>
       <option value="4">Home Kitchen and Dining</option>
@@ -97,12 +97,12 @@
 <div class="row">
  <div class="col-md-4">
     <label for="product-name" class="form-label">Products/Service</label>
-    <input type="text" class="form-control" value='no' id="product-name" placeholder="item-1">
+    <input type="text" class="form-control" value="{{company.products.0.product_name}}"" id="product-name" placeholder="item-1">
   </div>
 <!-- Products description -->
   <div class="col-md-8">
     <label for="description-text" class="form-label">Product Description</label>
-    <textarea name="description-text" class="form-control" id="description-text">no</textarea>
+    <textarea name="description-text" class="form-control" id="description-text">{{company.products.0.description_text}}</textarea>
   </div>
   </div>
 </div>
