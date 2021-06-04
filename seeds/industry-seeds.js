@@ -2,58 +2,55 @@ const { Industry } = require('../models');
 
 const industrydata = [
   {
-    industry_name: "furniture"
+    industry_name: "Furniture"
   },
   {
-    industry_name: "wearable accessories"
+    industry_name: "Wearable Accessories"
   },
   {
-    industry_name: "jewelry"
+    industry_name: "Jewelry"
   },
   {
-    industry_name: "apparel"
+    industry_name: "Apparel"
   },
   {
-    industry_name: "home kitchen & dining"
+    industry_name: "Home Kitchen and Dining"
   },
   {
-    industry_name: "home furniture"
+    industry_name: "Home Bedding"
   },
   {
-    industry_name: "home bedding"
+    industry_name: "Home Bathroom"
   },
   {
-    industry_name: "home bathroom"
+    industry_name: "Home Outdoor"
   },
   {
-    industry_name: "home outdoor"
+    industry_name: "Garden"
   },
   {
-    industry_name: "garden"
+    industry_name: "Music"
   },
   {
-    industry_name: "music"
+    industry_name: "Games"
   },
   {
-    industry_name: "games"
+    industry_name: "Reading"
   },
   {
-    industry_name: "reading"
+    industry_name: "Toys"
   },
   {
-    industry_name: "toys"
+    industry_name: "Art"
   },
   {
-    industry_name: "art"
+    industry_name: "Home Services"
   },
   {
-    industry_name: "home services"
+    industry_name: "Commercial Services"
   },
   {
-    industry_name: "commercial services"
-  },
-  {
-    industry_name: "administration  & office services"
+    industry_name: "Administration and Office"
   }
 ];
 
