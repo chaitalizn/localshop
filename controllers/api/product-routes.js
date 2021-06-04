@@ -30,6 +30,32 @@ router.get('/:id', (req, res) => {
     });
 });
 
+//update the product based on the company ID
+router.put('/update', (req, res) => {
+    Product.update(
+      {
+        product_name: req.body.product_name,
+        description_text: req.body.description_text
+      },
+      {
+        where: {
+          company_id: req.session.user_id
+        }
+      }
+    )
+      .then(industryData => {
+        if (!industryData) {
+          res.status(404).json({ message: 'No post found with this id' });
+          return;
+        }
+        res.json(industryData);
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+  });
+
 router.put('/:id', (req, res) => {
     Product.update(
       {
