@@ -315,5 +315,31 @@ body {
 }
 
 .aboutus-title {
-	font-size: 4rem;
+	font-size: 5rem;
+}
+
+.mission h3 {
+	font-size: 3rem;
+}
+.mission p {
+	font-size: 2rem;
+	font-weight: bold;
+}
+
+.about-us {
+	background-image: url(https://images.unsplash.com/photo-1573612664822-d7d347da7b80?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80);
+	background-size: cover;
+	background-position: center;
+	width: 100vw;
+	height: 100vh;
+	max-width: 100%;
+}
+
+.about-us p,
+h2,
+h3,
+h5 {
+	padding: 20px;
+	background: rgba(0, 0, 0, 0.6);
+	color: #fff;
 }
