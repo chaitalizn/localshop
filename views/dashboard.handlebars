@@ -103,13 +103,11 @@
   <div class="row mb-4">
     <!-- Product Name -->
     <div class="col-md-4">
-      <label for="product-name" class="form-label">Products/Service</label>
-      <input type="text" class="form-control" value="{{product_name}}" id="product-name" placeholder="New Product">
+      <input type="text" class="form-control" value="{{product_name}}" id="product-add-name" placeholder="Product/Service Name">
     </div>
     <!-- Products Description -->
     <div class="col-md-7">
-      <label for="description-text" class="form-label">Product Description</label>
-      <textarea name="description-text" class="form-control" rows="1" id="description-text">{{description_text}}</textarea>
+      <textarea name="description-text" class="form-control" rows="1" id="description-add-text" placeholder="Product/Service Description">{{description_text}}</textarea>
     </div>
     <div class="col-md-1 d-flex justify-content-end align-items-end">
       <button type="button" class="btn btn-primary" id="add-product-btn">+</button>
@@ -135,3 +133,4 @@
 {{else}}
 <script src="/javascript/add-company.js"></script>
 {{/if}}
+<script src="/javascript/add-product.js"></script>
