@@ -51,4 +51,9 @@ router.get('/searchAll', (req, res) => {
     .catch(err => res.status(500).json(err));
 })
 
+//About Us Page Route
+router.get('/about-us', (req, res) => {
+  res.render('aboutus');
+})
+
 module.exports = router;
