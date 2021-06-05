@@ -57,12 +57,6 @@ async function updateFormHandler(event) {
   });
   */
 
-  // console.log(response);
-  // responseHours.json()
-  // .then(data => {
-  //   console.log(data);
-  // })
-
   if (response.ok && responseHours.ok /*&& responseProduct.ok*/) {
     document.location.replace(`/searchAll`);
   } 
