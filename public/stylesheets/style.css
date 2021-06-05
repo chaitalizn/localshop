@@ -336,10 +336,20 @@ body {
 }
 
 .about-us p,
-h2,
-h3,
-h5 {
+.about-us h2,
+.about-us h3,
+.about-us h5,
+.contact-us h2 {
 	padding: 20px;
 	background: rgba(0, 0, 0, 0.6);
 	color: #fff;
+}
+
+.contact-us {
+	background-image: url(https://images.unsplash.com/photo-1512626120412-faf41adb4874?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80);
+	background-size: cover;
+	background-position: center;
+	width: 100vw;
+	height: 100vh;
+	max-width: 100%;
 }

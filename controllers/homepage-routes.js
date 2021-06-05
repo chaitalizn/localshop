@@ -56,4 +56,9 @@ router.get('/about-us', (req, res) => {
   res.render('aboutus');
 })
 
+//Abou Page Route
+router.get('/contact', (req, res) => {
+  res.render('contact');
+})
+
 module.exports = router;
