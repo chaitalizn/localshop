@@ -7,8 +7,13 @@ body, html{
 	height: 100%;
 	margin: 0;
 	padding: 0;
+	background-color: #F9F9F9;
+	
 }
 
+.navbar {
+ background-color: #052342;
+}
 .wrapper{
 	width: 100%;
     min-height: 100%;
@@ -33,7 +38,7 @@ main{
 footer {
 	display: flex;
 	justify-content: center;
-	background-color: #111;
+	background-color: #052342;
 	padding: 1% 0;
 }
 
@@ -51,7 +56,7 @@ footer a {
 	z-index: 1;
 	top: 0;
 	left: 0;
-	background-color: #111;
+	background-color: #95ABBC;
 	overflow-x: hidden;
 	transition: 0.5s;
 	padding-top: 60px;
@@ -61,7 +66,7 @@ footer a {
 	padding: 8px 8px 8px 32px;
 	text-decoration: none;
 	font-size: 25px;
-	color: #818181;
+	color: #052342;
 	display: block;
 	transition: 0.3s;
 }
@@ -79,16 +84,16 @@ footer a {
 }
 
 .openbtn {
-	font-size: 20px;
+	font-size: 28px;
 	cursor: pointer;
-	background-color: #111;
-	color: white;
-	padding: 10px 15px;
+	background-color: #052342;
+	color: #F9F9F9;
+	margin-left: 10px;
 	border: none;
 }
 
 .openbtn:hover {
-	background-color: #444;
+	color: #DA9C21;
 }
 
 .btn-no-style{
@@ -104,7 +109,7 @@ footer a {
 }
 .btn-no-style:hover {
     background: none;
-    color: #225ca3;
+    color: #DA9C21;
 }
 
 #main {
@@ -128,10 +133,6 @@ html {
 }
 
 /* The hero image */
-body {
-	margin: 0;
-	font-family: sans-serif;
-}
 
 .hero {
 	/* Sizing */
@@ -149,12 +150,12 @@ body {
 	color: rgb(30, 235, 166);
 	padding: 20vw;
 
-	/* Background styles */
+	/* Background styles 
 	background-image: url("https://images.unsplash.com/photo-1565201426074-a17f574f8692?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1376&q=80");
 	background-size: cover;
 	background-position: center center;
 	background-repeat: no-repeat;
-	background-attachment: fixed;
+	background-attachment: fixed; */
 }
 .hero-text {
 	margin-left: 10vw;
@@ -191,6 +192,11 @@ body {
 	border-radius: 20px;
 }
 
+h2 {
+	font-family: 'Lora', serif;
+	color: #052342;
+	line-height: 3rem;
+}
 /* Single Company Page styling */
 
 .single-company {

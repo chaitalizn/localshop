@@ -7,37 +7,41 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="/stylesheets/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+   <!-- <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet"> -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,700;1,600&family=Roboto:wght@700&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div class="wrapper">
         <header>
-            <nav class="navbar sticky-top navbar-dark bg-dark navbar-expand-sm bg-light text-left d-flex justify-content-between px-4">
-                <div class="col-md-4" id="main">
+            <nav class="navbar navbar-static-top navbar-expand-sm">
+                <div class="container-fluid row p-3">
+                <div class="col" id="main">
                     <button class="openbtn" onclick="openNav()">☰</button>
                 </div>
-                <div class="col-md-4 d-flex justify-content-center">
+                <div class="col d-flex justify-content-center">
                     <a href="/"><img class="logo" src="logo.png"></a>
                 </div>
-                <div class="col-md-4 d-flex flex-row-reverse">
+                <div class="col d-flex flex-row-reverse">
                     {{#if loggedIn}}
-                    <a class="p-2 text-right" href="/dashboard">Company Dashboard</a>
+                    <a class="p-2 text-right" href="/dashboard">Business Owner Dashboard</a>
                     <button id="logout" class="p-2 btn-no-style">Logout</button>
                     {{else}}
                     <a href="/login">Login</a>
                     {{/if}}
                 </div>
+                </div>
             </nav>
 
             <div id="mySidebar" class="sidebar">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-                <a href="/searchAll">All Companies</a>
-                <a href="#">Name</a>
+                <a href="/searchAll">All Businesses</a>
+                <a href="#">Business Name</a>
                 <a href="#">Industry</a>
                 <a href="#">Services</a>
-                <a href="#">About</a>
-                <a href="#">Contact</a>
+                <a href="#">About Us</a>
+                <a href="#">Contact Us</a>
             </div>
         </header>
 
@@ -45,7 +49,7 @@
             {{{ body }}}
         </main>
 
-        <footer class="navbar-dark bg-dark">
+        <footer class="navbar-dark">
             <a href="/">LocalShop ©2021</a>
         </footer>
     </div>
