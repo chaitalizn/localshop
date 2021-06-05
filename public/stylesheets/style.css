@@ -359,7 +359,9 @@ body {
 	max-width: 100%;
 }
 
-.contact-form input,
+/* Contact Form Styling */
+
+/* .contact-form input,
 .contact-form textarea {
 	border: 1px solid #fff;
 	display: block;
@@ -392,4 +394,11 @@ body {
 .contact-form button:hover {
 	color: #fff;
 	background: green;
+} */
+
+/* Contact form styling Ends */
+
+iframe {
+	width: 500px;
+	height: 30rem;
 }
