@@ -17,6 +17,11 @@ body, html{
     flex-direction: column;
 }
 
+.logo {
+	width: 210px;
+	height: auto;
+}
+
 main{
 	flex: 1
 }

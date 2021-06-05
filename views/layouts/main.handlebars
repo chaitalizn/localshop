@@ -13,17 +13,17 @@
 <body>
     <div class="wrapper">
         <header>
-            <nav class="navbar navbar-dark bg-dark navbar-expand-sm bg-light text-left d-flex justify-content-between px-4">
-                <div id="main">
+            <nav class="navbar sticky-top navbar-dark bg-dark navbar-expand-sm bg-light text-left d-flex justify-content-between px-4">
+                <div class="col-md-4" id="main">
                     <button class="openbtn" onclick="openNav()">☰</button>
                 </div>
-                <div>
-                    <a href="/"><h1 class="display-4 text-light">LocalShop</h1></a>
+                <div class="col-md-4 d-flex justify-content-center">
+                    <a href="/"><img class="logo" src="logo.png"></a>
                 </div>
-                <div>
+                <div class="col-md-4 d-flex flex-row-reverse">
                     {{#if loggedIn}}
-                    <a class="text-right" href="/dashboard">Company Dashboard</a>
-                    <button id="logout" class="btn-no-style">logout</button>
+                    <a class="p-2 text-right" href="/dashboard">Company Dashboard</a>
+                    <button id="logout" class="p-2 btn-no-style">Logout</button>
                     {{else}}
                     <a href="/login">Login</a>
                     {{/if}}
