@@ -20,7 +20,8 @@ router.get('/company/:id', (req, res) => {
         where: {
           id: req.params.id
         },
-        include: Hours
+        include: [Hours,
+        Product]
       })
         .then(dbCompanyData => {
           if (!dbCompanyData) {
