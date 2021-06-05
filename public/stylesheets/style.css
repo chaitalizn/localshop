@@ -339,7 +339,11 @@ body {
 .about-us h2,
 .about-us h3,
 .about-us h5,
-.contact-us h2 {
+.contact-us h2,
+.contact-info h3,
+.contact-info p,
+.contact-info address,
+.contact-form {
 	padding: 20px;
 	background: rgba(0, 0, 0, 0.6);
 	color: #fff;
@@ -352,4 +356,39 @@ body {
 	width: 100vw;
 	height: 100vh;
 	max-width: 100%;
+}
+
+.contact-form input,
+.contact-form textarea {
+	border: 1px solid #fff;
+	display: block;
+	padding: 7px 15px;
+	font-size: 16px;
+	width: 100%;
+	margin-bottom: 15px;
+	margin-top: 5px;
+	border-radius: 10px;
+	background-color: rgba(255, 255, 255, 0.75);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+	background-color: rgba(255, 255, 255, 1);
+	outline: none;
+}
+
+.contact-form button {
+	width: 100%;
+	border: none;
+	color: black;
+	background: #818181;
+	text-align: center;
+	padding: 15px 0;
+	font-size: 16px;
+	border-radius: 10px;
+}
+
+.contact-form button:hover {
+	color: #fff;
+	background: green;
 }
