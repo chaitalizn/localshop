@@ -106,6 +106,10 @@ footer a {
 	transition: margin-left 0.5s;
 }
 
+#add-product-btn{
+	width: 100%;
+}
+
 /* On smaller screens, where height is less than 450px, */
 @media screen and (max-height: 450px) {
 	.sidebar {
