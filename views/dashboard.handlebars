@@ -94,7 +94,7 @@
 
 
 <!-- Products -->
-<div class="container-fluid mt-3">
+<div class="container-fluid mt-3" id="product-list">
   <h4 class="mt-3"> List your products and/or services:</h4>
   {{#each company.products as |product|}}
   {{> add-company product}}
@@ -133,4 +133,4 @@
 {{else}}
 <script src="/javascript/add-company.js"></script>
 {{/if}}
-<script src="/javascript/add-product.js"></script>
+<script src="/javascript/add-delete-product.js"></script>

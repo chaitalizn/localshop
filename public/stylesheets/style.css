@@ -106,7 +106,8 @@ footer a {
 	transition: margin-left 0.5s;
 }
 
-#add-product-btn{
+#add-product-btn,
+.delete-product-btn {
 	width: 100%;
 }
 
