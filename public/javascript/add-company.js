@@ -58,7 +58,7 @@ async function newFormHandler(event) {
   */
 
   if (response.ok && responseHours.ok /*&& responseProduct.ok*/) {
-    document.location.replace(`/searchAll`);
+    document.location.reload();
   } 
   else {
     alert(response.statusText + responseHours.statusText);
