@@ -48,14 +48,16 @@ async function newFormHandler(event) {
     headers: {'Content-Type': 'application/json'}
   });
 
+  /*
   //Await the response to create new product
   const responseProduct = await fetch('/api/product', {
     method: 'Post',
     body: JSON.stringify(setNewProductArray()),
     headers: {'Content-Type': 'application/json'}
   });
+  */
 
-  if (response.ok && responseHours.ok && responseProduct.ok) {
+  if (response.ok && responseHours.ok /*&& responseProduct.ok*/) {
     document.location.replace(`/searchAll`);
   } 
   else {
