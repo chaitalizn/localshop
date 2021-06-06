@@ -139,7 +139,7 @@ router.put('/user', (req, res) => {
   })
 });
 
-// PUT /api/users/1 - update selected company info
+//PUT /api/users/1 - update selected company info
 router.put('/:id', (req, res) => {
   Company.update(req.body, {
     where: {

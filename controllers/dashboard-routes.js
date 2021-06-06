@@ -18,7 +18,7 @@ router.get('/', authenticate, (req, res) => {
     var company_id = dbUserData.companies[0].id;
     Company.findOne({
       where: {id: company_id},
-      include: [User,Hours, Industry,Product]
+      include: [User, Hours, Industry, Product]
     })
     .then(dbCompanyData => {
       const company = dbCompanyData.get({plain: true})

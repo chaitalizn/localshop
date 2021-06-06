@@ -48,18 +48,20 @@ async function updateFormHandler(event) {
     headers: {'Content-Type': 'application/json'}
   });
 
-   //Await the response to create new product
-   const responseProduct = await fetch('/api/product/update', {
+  /*
+  //Await the response to create new product
+  const responseProduct = await fetch('/api/product/update', {
     method: 'PUT',
     body: JSON.stringify(setUpdateProductArray()),
     headers: {'Content-Type': 'application/json'}
   });
+  */
 
-  if (response.ok && responseHours.ok && responseProduct.ok) {
+  if (response.ok && responseHours.ok /*&& responseProduct.ok*/) {
     document.location.replace(`/searchAll`);
   } 
   else {
-    alert(response.statusText + responseHours.statusText + responseProduct.statusText);
+    alert(response.statusText + responseHours.statusText /*+ responseProduct.statusText*/);
   }
 }
 

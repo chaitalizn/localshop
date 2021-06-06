@@ -20,7 +20,8 @@ router.get('/company/:id', (req, res) => {
         where: {
           id: req.params.id
         },
-        include: Hours
+        include: [Hours,
+        Product]
       })
         .then(dbCompanyData => {
           if (!dbCompanyData) {
@@ -48,6 +49,16 @@ router.get('/searchAll', (req, res) => {
         res.render('result', {companies, loggedIn: req.session.loggedIn});
     })
     .catch(err => res.status(500).json(err));
+})
+
+//About Us Page Route
+router.get('/about-us', (req, res) => {
+  res.render('aboutus');
+})
+
+//Abou Page Route
+router.get('/contact', (req, res) => {
+  res.render('contact');
 })
 
 module.exports = router;
