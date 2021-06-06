@@ -35,7 +35,7 @@
     <select name="industry" class="form-select  mb-3" id="industry" aria-label=".form-select-lg example">
       <option>Choose a industry...</option>
       {{#each industries as |industry|}}
-      {{> industry-selection industryId=industry.id industryName=industry.industry_name currentIndustry=company.industry.id}}
+      {{> industry-selection industryId=industry.id industryName=industry.industry_name}}
       {{/each}}
     </select>
   </div>

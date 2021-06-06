@@ -46,10 +46,12 @@ router.get('/', (req, res) => {
 });
 
 // GET/api/company/1 - get one company info
-router.get('/:id', (req, res) => {
+//router.get('/:id', (req, res) => {
+  router.get('/single', (req, res) => {
     Company.findOne({
         where: {
-          id: req.params.id
+          //id: req.params.id
+          id: req.session.user_id
         },
         include: [
           //include the Hours model here - one to one
@@ -59,8 +61,7 @@ router.get('/:id', (req, res) => {
           },
           //include the Industry model here
           {
-          model: Industry,
-          attributes: ['industry_name']
+          model: Industry
           },
           //add product data
           {

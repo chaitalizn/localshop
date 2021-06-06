@@ -66,3 +66,17 @@ async function updateFormHandler(event) {
 }
 
 document.querySelector('.company-info-form').addEventListener('submit', updateFormHandler);
+
+//Function to assign a default industry selection based on the current companies industry
+async function assignIndustry(){
+
+  const companyResponse = await fetch('/api/company/single');
+  const companyData = await companyResponse.json();
+
+  //Find the option in the section menu that matches the id of the company industry
+  var option = document.querySelector(`option[value='${companyData.industry.id}']`);
+  option.selected = true;
+}
+
+//Assign the company industry on edit company page loading
+assignIndustry();
