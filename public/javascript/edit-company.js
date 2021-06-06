@@ -24,12 +24,12 @@ function setNewHoursObject(){
   return {mon, tues, wed, thurs, fri, sat, sun};
 }
 
-function setUpdateProductArray(){
-  const product_name = document.querySelector('#product-name').value.trim();
-  const description_text = document.querySelector('#description-text').value.trim();
+// function setUpdateProductArray(){
+//   const product_name = document.querySelector('#product-name').value.trim();
+//   const description_text = document.querySelector('#description-text').value.trim();
 
-  return {product_name, description_text};
-}
+//   return {product_name, description_text};
+// }
 
 async function updateFormHandler(event) {
   event.preventDefault();

@@ -45,7 +45,13 @@
             {{company.about}}
         </section>
         <center>
-        {{> product-info company.product}}
+            <div class="products-section justify-content-center border border-info"></div>
+                <h3 class="mt-3">Products / Services Offered</h3>
+                {{#each company.products as |product|}}
+                    {{> product-info product}}
+                {{/each}}
+                </div>
+            </div>
         </center>
    </div>
 <span class="likebtn-wrapper" data-theme="heartcross" data-i18n_like="Like" data-ef_voting="wobble" data-white_label="true" data-identifier="heartliker" data-popup_hide_on_outside_click="false" data-share_enabled="false" data-tooltip_enabled="false" data-site_id="60b988e3fa8fdf0c3d9f10bf"></span>
