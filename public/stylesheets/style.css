@@ -1,38 +1,39 @@
 :root {
-	--color-primary: ##3C7EC2;
+	--color-primary: ##3c7ec2;
 	--color-text-light: #fff;
-	--color-bg-light: #FAFAFC;
+	--color-bg-light: #fafafc;
 
-	--space-1: .5rem;  /* 8px */
-	--space-2: 1rem;   /* 16px */
-  }
+	--space-1: 0.5rem; /* 8px */
+	--space-2: 1rem; /* 16px */
+}
 
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: 'Roboto', sans-serif, "Nunito", sans-serif;
+	font-family: "Roboto", sans-serif, "Nunito", sans-serif;
 }
 
-body, html{
+body,
+html {
 	width: 100%;
 	height: 100%;
-	background-color: #F9F9F9;
+	background-color: #f9f9f9;
 }
 
 a {
-	color: #F9F9F9;
+	color: #f9f9f9;
 	text-decoration: none;
 }
 
 a :hover {
-	color: #E4A31E;
+	color: #e4a31e;
 }
 
 .navbar {
- background-color: #052342;
+	background-color: #052342;
 }
-.wrapper{
+.wrapper {
 	width: 100%;
 	min-height: 100%;
 	margin: 0 auto;
@@ -74,7 +75,7 @@ footer {
 	z-index: 1;
 	top: 0;
 	left: 0;
-	background-color: #95ABBC;
+	background-color: #95abbc;
 	overflow-x: hidden;
 	transition: 0.5s;
 	padding-top: 60px;
@@ -90,7 +91,7 @@ footer {
 }
 
 .sidebar a:hover {
-	color: #F9F9F9;
+	color: #f9f9f9;
 }
 
 .sidebar .closebtn {
@@ -105,13 +106,13 @@ footer {
 	font-size: 28px;
 	cursor: pointer;
 	background-color: #052342;
-	color: #F9F9F9;
+	color: #f9f9f9;
 	margin-left: 10px;
 	border: none;
 }
 
 .openbtn:hover {
-	color: #E4A31E;
+	color: #e4a31e;
 }
 
 #main {
@@ -134,24 +135,24 @@ footer {
 }
 /* sidebar styling end */
 
-.btn-no-style{
+.btn-no-style {
 	background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    text-decoration: none;
-    color: white;
-    font-size: 1rem;
-    transition: color .1s;
-    margin-left: 1rem;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+	text-decoration: none;
+	color: white;
+	font-size: 1rem;
+	transition: color 0.1s;
+	margin-left: 1rem;
 }
 .btn-no-style:hover {
-    background: none;
-    color: #DA9C21;
+	background: none;
+	color: #da9c21;
 }
 
 .hero h1 {
-	font-family: 'lora', serif;
+	font-family: "lora", serif;
 	font-size: 2.2rem;
 }
 /* Home-handlebars page styling 
@@ -191,39 +192,38 @@ footer {
 .hero img {
 	width: 60vw;
 	height: auto;
-} 
+}
 
 /* result.handlebars page card */
 .card {
-	background-color:#D8D8D6;
+	background-color: #d8d8d6;
 	border: none;
 	border-radius: 0;
 }
 
-
 .card-text {
-	font-family: 'lora', serif;
+	font-family: "lora", serif;
 	font-size: 1.3rem;
 }
 .card-link {
 	font-size: 1rem;
-	background-color:#052342;
+	background-color: #052342;
 	padding: 0.6rem;
 }
 .card-link:hover {
-	color: #E4A31E;
+	color: #e4a31e;
 }
 
 .btn {
-	background-color: #E4A31E;
-	color: #F9F9F9;
+	background-color: #e4a31e;
+	color: #f9f9f9;
 	text-decoration: none;
 	font-size: 1.5em;
 }
 
 .btn:hover {
-background-color: #052342;
- color: #E4A31E;
+	background-color: #052342;
+	color: #e4a31e;
 }
 
 .line {
@@ -244,7 +244,7 @@ background-color: #052342;
 }
 
 .company .card {
-	background-color: #F9F9F9;
+	background-color: #f9f9f9;
 	margin: 0 1rem 1rem 0;
 }
 .company .card .card-body {
@@ -273,43 +273,44 @@ background-color: #052342;
 	color: #052342;
 }
 .company-info a:hover {
-	color: #E4A31E;
+	color: #e4a31e;
 }
 
 .company-info {
-	background-color: #D2DCE4;
+	background-color: #d2dce4;
 }
 
 /* dashboard style*/
-form label, h4 {
+form label,
+h4 {
 	font-size: 1.2rem;
 	font-weight: 900;
-	color: #2F5D8C;
+	color: #2f5d8c;
 	margin: 0;
 }
 .page-title h1 {
-	color: #2F5D8C;
+	color: #2f5d8c;
 	font-weight: 900;
 	font-size: 3rem;
 }
 .page-title {
-	background-color: #D8D8D6;
+	background-color: #d8d8d6;
 }
 
 .form-control {
 	border-radius: 0;
 }
 .form-control:hover {
-	border-color: #E4A31E;
+	border-color: #e4a31e;
 }
 .form-control:invalid {
 	border-color: aqua;
 }
 .form-control:current {
-	border-color: #E4A31E;
+	border-color: #e4a31e;
 }
-  /* some basic button styling */
-  .favorite-button input[type=submit] {
+/* some basic button styling */
+.favorite-button input[type="submit"] {
 	width: 48px;
 	height: 48px;
 	cursor: pointer;
@@ -331,7 +332,6 @@ form label, h4 {
 .favorite-button .heart-loading,
 .favorite-button .heart-loading[placeholder] {
 	background: url('data:image/svg+xml;utf8,<svg fill="%23cccccc" height="48" viewBox="0 0 24 24" width="48" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M16.5 3c-1.74 0-3.41.81-4.5 2.09C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.42 2 8.5c0 3.78 3.4 6.86 8.55 11.54L12 21.35l1.45-1.32C18.6 15.36 22 12.28 22 8.5 22 5.42 19.58 3 16.5 3zm-4.4 15.55l-.1.1-.1-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05z"/></svg>');
-	
 }
 .favorite-button .favorite-container {
 	display: flex;
@@ -390,42 +390,41 @@ form label, h4 {
 	color: #64dd17;
 	margin: 0 1rem;
 	cursor: pointer;
-  }
+}
 
-  /* slider carousel media query */
+/* slider carousel media query */
 
-  @media (max-width: 767px) {
-    .carousel-inner .carousel-item > div {
-        display: none;
-    }
-    .carousel-inner .carousel-item > div:first-child {
-        display: block;
-    }
+@media (max-width: 767px) {
+	.carousel-inner .carousel-item > div {
+		display: none;
+	}
+	.carousel-inner .carousel-item > div:first-child {
+		display: block;
+	}
 }
 
 .carousel-inner .carousel-item.active,
 .carousel-inner .carousel-item-next,
 .carousel-inner .carousel-item-prev {
-    display: flex;
+	display: flex;
 }
 
 /* medium and up screens */
 @media (min-width: 768px) {
-    
-    .carousel-inner .carousel-item-end.active,
-    .carousel-inner .carousel-item-next {
-      transform: translateX(25%);
-    }
-    
-    .carousel-inner .carousel-item-start.active, 
-    .carousel-inner .carousel-item-prev {
-      transform: translateX(-25%);
-    }
+	.carousel-inner .carousel-item-end.active,
+	.carousel-inner .carousel-item-next {
+		transform: translateX(25%);
+	}
+
+	.carousel-inner .carousel-item-start.active,
+	.carousel-inner .carousel-item-prev {
+		transform: translateX(-25%);
+	}
 }
 
 .carousel-inner .carousel-item-end,
-.carousel-inner .carousel-item-start { 
-  transform: translateX(0);
+.carousel-inner .carousel-item-start {
+	transform: translateX(0);
 }
 
 .aboutus-title {
@@ -459,9 +458,9 @@ form label, h4 {
 .contact-info address,
 .contact-form {
 	padding: 20px;
-	background: rgba(0, 0, 0, 0.6);
-	color: #fff;
-	border-radius: 10px;
+	background: rgba(255, 255, 255, 0.6);
+	color: #052342;
+	border-radius: 0px;
 }
 
 .contact-us {
