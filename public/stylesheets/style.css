@@ -190,10 +190,18 @@ footer {
 }
  */
 .hero img {
-	width: 60vw;
+	width: 40vw;
 	height: auto;
 }
 
+.result-title {
+	margin: 0 0 2rem 0;
+	padding: 2rem;
+	color: #2f5d8c;
+}
+.result-img {
+	width: fit-content;
+}
 /* result.handlebars page card */
 .card {
 	background-color: #d8d8d6;
@@ -227,7 +235,7 @@ footer {
 }
 
 .line {
-	margin: 3em;
+	margin: 2rem;
 }
 
 /* Single Company Page styling */
@@ -429,6 +437,9 @@ h4 {
 
 .aboutus-title {
 	font-size: 5rem;
+}
+.carousel-item img {
+	margin: 0 5px;
 }
 
 .mission h3 {

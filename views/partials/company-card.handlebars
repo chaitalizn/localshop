@@ -1,10 +1,12 @@
 <div class="card col-md-4 m-1 p-4">
-  <div class="card-body">
+  <div class="card-body d-flex flex-column">
     <h2 class="card-title mb-3">{{company_name}}</h2>
     <p class="card-text">{{about}}</p>
-    <h6 class="card-subtitle pb-5 ">Phone: {{phone}}</h6>
-    
+
+    <div class="info mt-auto">
+    <h6 class="card-subtitle pb-3 ">Phone: {{phone}}</h6>
     <a href="/company/{{id}}" class="card-link align-self-end mb-3">VIEW MORE</a>
+    </div>
 
   </div>
 </div>
