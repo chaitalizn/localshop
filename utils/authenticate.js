@@ -5,7 +5,6 @@ function authenticate(req, res, next){
     else{
         res.redirect('/login');
     }
-
 }
 
 module.exports = authenticate;

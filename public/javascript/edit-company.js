@@ -24,13 +24,6 @@ function setNewHoursObject(){
   return {mon, tues, wed, thurs, fri, sat, sun};
 }
 
-// function setUpdateProductArray(){
-//   const product_name = document.querySelector('#product-name').value.trim();
-//   const description_text = document.querySelector('#description-text').value.trim();
-
-//   return {product_name, description_text};
-// }
-
 async function updateFormHandler(event) {
   event.preventDefault();
   
@@ -48,16 +41,8 @@ async function updateFormHandler(event) {
     headers: {'Content-Type': 'application/json'}
   });
 
-  /*
-  //Await the response to create new product
-  const responseProduct = await fetch('/api/product/update', {
-    method: 'PUT',
-    body: JSON.stringify(setUpdateProductArray()),
-    headers: {'Content-Type': 'application/json'}
-  });
-  */
-
-  if (response.ok && responseHours.ok /*&& responseProduct.ok*/) {
+  //If both updates are successful then bring us to the search results.
+  if (response.ok && responseHours.ok) {
     document.location.replace(`/searchAll`);
   } 
   else {

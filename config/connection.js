@@ -18,9 +18,9 @@ if(process.env.JAWSDB_URL){
 else{
     // Instantiate new sequelize connection instance based on .env file
     sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASS , {
-    host: 'localhost',
-    dialect: 'mysql'
-});
+        host: 'localhost',
+        dialect: 'mysql'
+    });
 }
 
 
