@@ -51,6 +51,27 @@ const industrydata = [
   },
   {
     industry_name: "Administration and Office"
+  },
+  {
+    industry_name: "Beauty Services"
+  },
+  {
+    industry_name: "Medical Services"
+  },
+  {
+    industry_name: "Salon"
+  },
+  {
+    industry_name: "Barbershop"
+  },
+  {
+    industry_name: "Physiotherepy"
+  },
+  {
+    industry_name: "Food Services"
+  },
+  {
+    industry_name: "Restaurant"
   }
 ];
 
