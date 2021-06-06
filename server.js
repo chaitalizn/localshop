@@ -6,6 +6,7 @@ const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const exphbs = require('express-handlebars')
 const path = require('path');
+const seedIndustries = require('./seeds/industry-seeds');
 
 //Initialize express app and define port for server to use
 const app = express();
@@ -40,13 +41,15 @@ app.use(express.static('public/images'));
 app.use(routes);
 
 //Sync sequelize tables with local database
-sequelize.sync({force: false}).then(() => {
+sequelize.sync({force: true}).then(() => {
     console.log("Connected to sequelize.");
-
+    seedIndustries();
     //Instruct server to listen on the designated port
     app.listen(PORT, () => {
         console.log(`App listening on port: ${PORT}`);
     });
 });
+
+
 
 
