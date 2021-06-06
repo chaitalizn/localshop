@@ -52,6 +52,9 @@ main {
 	flex: 1;
 }
 
+.main-section {
+	width: 70vw;
+}
 /*.dim {
 	filter: brightness(80%);
 }*/
@@ -147,6 +150,10 @@ footer {
     color: #DA9C21;
 }
 
+.hero h1 {
+	font-family: 'lora', serif;
+	font-size: 2.2rem;
+}
 /* Home-handlebars page styling 
 .hero {
 	/* Sizing 
@@ -188,9 +195,12 @@ footer {
 
 /* result.handlebars page card */
 .card {
-	background-color: #95ABBC;
+	background-color:#D8D8D6;
 	border: none;
 	border-radius: 0;
+}
+.card-title {
+	font-weight: ;
 }
 
 .card-text {
@@ -213,8 +223,9 @@ footer {
 	font-size: 1.5em;
 }
 
-.btn :hover {
- color: #95ABBC;
+.btn:hover {
+background-color: #052342;
+ color: #E4A31E;
 }
 
 .line {
@@ -252,7 +263,34 @@ footer {
 	margin-bottom: 50px;
 }
 
+/* dashboard style*/
+form label, h4 {
+	font-size: 1.2rem;
+	font-weight: 900;
+	color: #2F5D8C;
+	margin: 0;
+}
+.page-title h1 {
+	color: #2F5D8C;
+	font-weight: 900;
+	font-size: 3rem;
+}
+.page-title {
+	background-color: #D8D8D6;
+}
 
+.form-control {
+	border-radius: 0;
+}
+.form-control:hover {
+	border-color: #E4A31E;
+}
+.form-control:invalid {
+	border-color: aqua;
+}
+.form-control:current {
+	border-color: #E4A31E;
+}
   /* some basic button styling */
   .favorite-button input[type=submit] {
 	width: 48px;
