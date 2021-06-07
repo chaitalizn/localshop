@@ -6,6 +6,7 @@ function setNewProductObject(){
     return {product_name, description_text};
 }
 
+//Add a product to the database
 async function addNewProduct(event){
     event.preventDefault();
 
@@ -24,6 +25,7 @@ async function addNewProduct(event){
     }
 }
 
+//Delete a product from the database
 async function deleteProduct(event){
     event.preventDefault();
 

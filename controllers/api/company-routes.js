@@ -19,22 +19,18 @@ router.get('/', (req, res) => {
             //include the Hours model here - one to one
             {
             model: Hours,
-            //attributes: ['mon', 'tues', 'wed', 'thurs', 'fri', 'sat', 'sun']
             },
             //include the Industry model here
             {
             model: Industry,
-            //attributes: ['industry_name']
             },
             //add product data
             {
-            model: Product,
-            //attributes: ['id', 'product_name', 'description_text']  
+            model: Product, 
             },
             //add user data
             {
             model: User,
-            //attributes: ['id', 'username', 'email']
             }  
         ]
     })

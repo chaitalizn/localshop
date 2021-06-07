@@ -15,6 +15,7 @@ const PORT = process.env.PORT || 3001;
 //define the session configuration and cookie settings for the session
 const sess = {
     secret: 'An amazing secret for nobody to see or use',
+    //log the user out after 10 mins of inactivity
     cookie: { maxAge: 60000 * 10 },
     rolling: true,
     resave: false,
@@ -35,7 +36,6 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static('public/images')); 
-
 
 //Use the routes we have defined in the controller folder
 app.use(routes);

@@ -24,13 +24,7 @@ function setNewHoursObject(){
   return {mon, tues, wed, thurs, fri, sat, sun};
 }
 
-function setNewProductArray(){
-  const product_name = document.querySelector('#product-name').value.trim();
-  const description_text = document.querySelector('#description-text').value.trim();
-
-  return {product_name, description_text};
-}
-
+//Called when the save button is clicked
 async function newFormHandler(event) {
   event.preventDefault();
 
@@ -48,16 +42,8 @@ async function newFormHandler(event) {
     headers: {'Content-Type': 'application/json'}
   });
 
-  /*
-  //Await the response to create new product
-  const responseProduct = await fetch('/api/product', {
-    method: 'Post',
-    body: JSON.stringify(setNewProductArray()),
-    headers: {'Content-Type': 'application/json'}
-  });
-  */
-
-  if (response.ok && responseHours.ok /*&& responseProduct.ok*/) {
+  //if both create responses are ok then reload the page to show update dashboard
+  if (response.ok && responseHours.ok) {
     document.location.reload();
   } 
   else {
