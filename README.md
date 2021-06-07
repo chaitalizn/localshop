@@ -58,4 +58,4 @@ Sean Brent, Jeremy Santos, Chaitali Patel, Aimee Jesso
 [MissAimeeJay](https://github.com/MissAimeeJay) - Email: ajesso@post.com <br>
 [Sean Brent](https://github.com/Brentsa) - Email: seanbrent5@live.ca <br>
 [Jeremy Santos](https://github.com/jjmsantos) - Email: jeremy.santos1010@gmail.com<br>
-[Chaitali Patel](https://github.com/chaitalizn) - Email: <br>
+[Chaitali Patel](https://github.com/chaitalizn) - Email: phchaitali3@gmail.com
