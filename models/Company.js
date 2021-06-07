@@ -24,7 +24,7 @@ Company.init(
         allowNull: false,
     },
     phone: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.BIGINT,
         allowNull: false,
     },
     company_email: {
@@ -46,13 +46,6 @@ Company.init(
         type: DataTypes.TEXT,
         allowNull: false,
     },
-    hours_id: {
-        type: DataTypes.INTEGER,
-        references: {
-            model: 'hours',
-            key: 'id'
-          }
-    },
     industry_id: {
         type: DataTypes.INTEGER,
         references: {
@@ -66,22 +59,14 @@ Company.init(
             model: 'user',
             key: 'id'
           }
-    },
-    products_id: {
-        type: DataTypes.INTEGER,
-        references: {
-            model: 'products',
-            key: 'id'
-          }
     }
-    //create a hours model and add references
     },
     {
         sequelize,
         freezeTableName: true,
         underscored: true,
         modelName: 'company'
-      }
+    }
 );
 
 module.exports = Company;

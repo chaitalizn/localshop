@@ -1,0 +1,71 @@
+<div class="container text-center">
+    <div class="single-company">
+        <div class="row">
+            <section class="company-name col-sm-12">
+                <h1>{{company.company_name}}</h1>
+            </section>
+          
+        </div>
+    </div>
+
+    <div class="row company">
+        <div class="company-info col-sm-4">
+
+            <section class="address">
+                <h2>Where Are We</h2>
+                <p>{{company.address}}</p>
+            </section>
+
+             <section class="phone">
+                <h2>Contact Us</h2>
+                <p>{{company.phone}}</p>
+                <p><a href="{{company.website}}" target="_blank">{{company.website}}</a></p>
+            </section>
+        
+            <section>
+                <h2>Store Hours</h2>
+                <div class="d-flex flex-column">
+                    <p>Monday: {{company.hour.mon}}</p>
+                    <p>Tuesday: {{company.hour.tues}}</p>
+                    <p>Wednesday: {{company.hour.wed}}</p>
+                    <p>Thursday: {{company.hour.thurs}}</p>
+                    <p>Friday: {{company.hour.fri}}</p>
+                    <p>Saturday: {{company.hour.sat}}</p>
+                    <p>Sunday: {{company.hour.sun}}</p>
+                </div>
+            </section>
+   
+           
+        </div>
+
+        <div class="col-sm-8">
+
+              <section class="rating">
+                <h2>Rate Us</h2>
+                <span class="likebtn-wrapper" data-theme="heartcross" data-i18n_like="Like" data-ef_voting="wobble" data-white_label="true" data-identifier="heartliker" data-popup_hide_on_outside_click="false" data-share_enabled="false" data-tooltip_enabled="false" data-site_id="60b988e3fa8fdf0c3d9f10bf"></span>
+            </section>
+
+             <section class="about ">
+                <h2>Who We Are</h2>
+                <p>{{company.about}}</p>
+            </section>
+
+            <section>
+                <div class="products-section"></div>
+                    <h2 class="mt-3">Products / Services Offered</h2>
+                    <div class="row">
+                    {{#each company.products as |product|}}
+                        {{> product-info product}}
+                    {{/each}}
+                    </div>
+            </section>
+        </div>
+    </div>
+
+
+
+<script>(function(d,e,s){if(d.getElementById("likebtn_wjs"))return;a=d.createElement(e);m=d.getElementsByTagName(e)[0];a.async=1;a.id="likebtn_wjs";a.src=s;m.parentNode.insertBefore(a, m)})(document,"script","//w.likebtn.com/js/w/widget.js");</script>
+<!-- LikeBtn Button library used for likes -->
+
+</div>
+
