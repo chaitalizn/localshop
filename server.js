@@ -41,7 +41,7 @@ app.use(express.static('public/images'));
 app.use(routes);
 
 //Sync sequelize tables with local database
-sequelize.sync({force: true}).then(() => {
+sequelize.sync({force: false}).then(() => {
     console.log("Connected to sequelize.");
     seedIndustries();
     //Instruct server to listen on the designated port
